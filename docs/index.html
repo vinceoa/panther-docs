@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>panther-docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Panther online documentation">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="assets/css/theme-simple-dark.css">
+  <style>
+    :root {
+      --mono-base: rgba(51, 51, 51, 1);
+      --mono-shade2: black;
+      --theme-color: rgba(45, 170, 225, 1);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'Panther Docs',
+      loadSidebar: '_sidebar.md',
+      autoHeader: true,
+      loadNavbar: '_navbar.md',
+      homepage: 'README.md',
+      maxLevel: 3,
+      subMaxLevel: 4,
+      themeable: {},
+      logo: '/panther_logo_thin.png',
+    }
+  </script>
+  <script src="assets/js/docsify.min.js"></script>
+  <script src="assets/js/docsify-themeable.min.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+
+</html>
