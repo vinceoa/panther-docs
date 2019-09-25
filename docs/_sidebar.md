@@ -8,3 +8,5 @@
 - [API](/api/README.md)
 - [Admin](/admin/README.md)
 - [Settings](/settings/README.md)
+
+© Open Answers Ltd 2019
