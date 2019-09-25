@@ -1,98 +1,159 @@
-# Console
+## Overview
 
-The console is the main feature of Panther. It contains the system event logs which are filtered and catagorised based on your settings.
+The console is the main feature of Panther. It contains the system
+event logs, which are filtered and categorized based on account
+settings.
 
-These events can be intereacted with using the console, there are numerous options the user has such as, deleting an event, expanding it to display more information or even assigning it to a specific user. All the options will be explained in this section.
+There are numerous options for interacting with the events, such as
+deleting them, expanding them to display more information, or
+assigning them to specific users.
+
+These options are explained in more detail below.
 
 ## Events
 
- * Click on an Event to higlight it.
+To interact with one or more events, first select them using one of
+the following methods:
+
+ * Click on a single event to highlight it.
  * Click hold and drag (like drawing a box) to highlight many events.
- * Ctrl click to add a single event to your selection.
- * Shift click to add all group of events to your selection.
+ * Control click to add another single event to your selection.
+ * Shift click to add a sequence of events to your selection.
+ * Press keyboard shortcut <kbd>ctrl</kbd>+<kbd>a</kbd> to select all events.
 
 [event-selection-multiple](/_media/event-selection-multiple.mp4 ':include :type=video')
 
-Right click to see the context menu of actions to take on your selected events.
+Right click to display the context menu of actions 
+available for the selected events as outlined below.
 
-Ctrl-A selects all events loaded in the grid.
 
-## Acknowledge and Unacknowledge
+### Acknowledge and Unacknowledge
 
-New events will be in an unacknowledged state by default, unless you have a [Rule](#rules) that says otherwise. These will be in bold text.
+New events will be in an unacknowledged state by default, displayed in
+bold text, unless a [rule](#rules) has been set that says otherwise.
 
-When you acknowledge an event, then event will be set to acknowledged, stop being bold and will be assigned to you.
-
-You can also acknowledge and unacknowledge from the [Event Details](#event-details) window.
+When an event is acknowledged from the right click menu, it will
+automatically be assigned to the user.
 
 [event-selection-multiple](/_media/event-right-click-ack-unack.mp4 ':include :type=video')
 
-## Clear
+Users can also acknowledge and unacknowledge events from the
+[event details](#event-details) dialogue box.
 
-Clear sets your event to be removed from the console. Cleared events will be highlighted green for a period so other users are notified until a background task deletes them completely.
+### Add External ID
 
-## Assign
+TODO
 
-You can assign events to console users, so users can see the events in their "Mine" [view](#views).
+### Add Note
 
-## Severity
+TODO
 
-You can set the severity of this event to a new value.
+### Clear
 
-## Copy Event
+Clearing sets an event to be removed from the console. Cleared events
+will be highlighted green for a time, so other users can be notified,
+until a background task deletes them.
 
-You can copy the summary details of the selected events.
+### Assign
+
+Events can be assigned to console users, who can then see them in the
+[view](#views) page under the `Mine` user view.
+
+### Severity
+
+The severity levels of events can be changed to different values by
+selecting new ones from the provided menu options.
+
+### Details
+
+TODO
+
+### Copy Event
+
+The summary details of the selected events can be copied into your
+local system's copy buffer for pasting into other applications.
+
+### Tools
+
+TODO
 
 ## Event Details
 
-You can view more detail of each event by double clicking the event or pressing the enter key when an event is selected.
-Also, all options available in the Consoles right click context menu are available as buttons at the bottom of the Event Details view.
+A dialogue box containing more detail of each event can be displayed
+by double clicking the event or pressing the enter key while an event
+is selected.
 
-### Summary
+In addition to the details available in the dialogue box, all actions
+in the console's right click context menu are also available as
+buttons along the bottom. Along the top is a row of tabs providing
+access to further information, as outlined below.
 
-The Summary tab provides an overview of the event and a graph of the events previous occurrences (up to 1000).
+### Details
 
-### History
-
-The History tab will provide you any activity that has occured on the event. Firstly what [Rules](#rules) have impacted the event during rules processing. Then any activity a user has taken on the event in the console.
+The `details` tab provides an overview of the event, including a graph
+of up to 1000 of the event's previous occurrences.
 
 ### Notes
 
-Users can add text notes to an event that other users can see view.
+Text notes can be added to events for further reference, which can
+also be seen by other users.
+
+### History
+
+Any activity that has occurred on the event can be seen in the
+`history` tab. This will include any [rules](#rules) that have been
+used during the event processing, and any actions taken by users from
+the console.
+
+### Fields
+
+All data associated with events may be inspected on the `fields` tab.
+
+### Matches
+
+The `matches` tab reports whether the events match any global or group
+[rules](#rules).
 
 ## Activity
 
-The activity stream on the dashboard keeps track of the users interaction with Panther. It logs events along with the time and the user that was responsible for the action. The activity stream logs:
+Recent user activity can be displayed by expanding the activity
+sidebar from the top-right corner of the console screen.
 
-* When an event log is acknowledged or unacknowledged
-* Event assignments
-* Severity changes
-* Clearing an event
-* Deleting an event
+## Filters
 
-## Groups
+The top-left corner of the console contains a row of filters which may
+be applied to display events matching a number of criteria.
 
-Selecting a group from the dropdown menu will filter all events down to just the group that you have setup in your [rules](#rules).
+### Group
 
-There are two special groups "All" and "None".  "All" will display every event. "None" will display events that have not been categorised into a group.
+Selecting a group from the drop-down menu will filter all events to
+just the group set up in the user's [rules](#rules).
 
-## Console Views
+There are two special groups -- `All` will display every event and `No
+Group` will display any events that have not been categorized.
 
-Views allow you to query event fields for particular data and only show those events in your console.
+### View
 
-By default you will have the "All", "Mine" and "Unacknowledged" views configured for you.
+Views allow event fields to be queried for particular data and only
+matching events to be shown in the console.
 
-## Severities
+By default, the `All`, `Mine`, `Acknowledged` and `Unacknowledged`
+views are already available.
 
-You can further filter your view by severity.
+### Severity
 
-Select "All" to reset your view back to everything.
+Selecting a specific severity will filter the console data to only
+contain events matching the required value, while `All` will include
+everything.
 
-## Group/Views/Severities
+### Multiple Filters
 
-You are able to select certain groups, views, and severities at the same time.
+It is possible to select all the filters at the same time in order to
+monitor specific kinds of events.
 
-For example you could view all Critical alerts that are assigned to you in group Xyz.
+For example, it is possible to view all critical alerts that are
+assigned to a particular user and match the rules for a configured
+group.
 
 ## Keyboard Shortcuts
 
@@ -151,7 +212,7 @@ For example you could view all Critical alerts that are assigned to you in group
 <kbd>s</kbd>
 
 
-### This help, but how did you get here?
+### Show the help dialogue
 
 <kbd>?</kbd> / <kbd>h</kbd>
 

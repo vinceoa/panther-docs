@@ -1,4 +1,4 @@
-# Dashboard
+## Overview
 
 The dashboard provides an overview of the current contents of your event console.
 
@@ -7,22 +7,35 @@ The dashboard provides an overview of the current contents of your event console
 
 ## Severities
 
-At the top of the dashboard there is a counter for the severities of the event logs that have been processed. This counter increases with the number of unique event logs, therefore if the same event log is processed multiple times this counter will not increase.
+At the top of the dashboard, there is a row of counters for events
+processed in the event logs associated with each severity.  These
+counters reflect the number of unique events logged, and will not
+increase if the same event log is processed multiple times.
+
 
 ## Event Groups
 
-The event groups section lists all the groups that have been created and displays a counter for the number of unique event log enteries in those groups. It also contains two other entries, a counter for all events and one for no groups.
+Counters are displayed in this section for events matching any created
+event groups -- along with one special counter for events having no
+associated group and another for all events processed.
+
+The counters reflect the total numbers of unique event log entries in
+each of the respective groups, with the coloured bars representing the
+relative proportions of events having each of the severity levels. The
+actual numerical breakdowns can be inspected by moving the mouse
+pointer over each row.
 
 ## Activity Stream
 
-The activity stream on the dashboard keeps track of the users interaction with Panther. It logs events along with the time and the user that was responsible for the action. The activity stream logs:
+The activity stream logs user interaction with Panther, including:
 
-* When an event log is acknowledged or unacknowledged
+* Event acknowledgements and unacknowledgements
 * Event assignments
-* Severity changes
-* Clearing an event
-* Deleting an event
+* Event severity changes
+* Event clearances
+* Event deletions
 
 ## Inventory
 
-Inventory keeps a log of the hostnames that have connected to Panther and the last time they connected.
+The inventory lists the names of hosts that have connected to Panther,
+and the last times they were seen.

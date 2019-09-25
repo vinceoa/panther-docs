@@ -1,17 +1,6 @@
 (function () {
 var INDEXS = {};
-
-var LOCAL_STORAGE = {
-  EXPIRE_KEY: 'docsify.search.expires',
-  INDEX_KEY: 'docsify.search.index'
-};
-
-function resolveExpireKey(namespace) {
-  return namespace ? ((LOCAL_STORAGE.EXPIRE_KEY) + "/" + namespace) : LOCAL_STORAGE.EXPIRE_KEY
-}
-function resolveIndexKey(namespace) {
-  return namespace ? ((LOCAL_STORAGE.INDEX_KEY) + "/" + namespace) : LOCAL_STORAGE.INDEX_KEY
-}
+var helper;
 
 function escapeHtml(string) {
   var entityMap = {
@@ -29,7 +18,7 @@ function escapeHtml(string) {
 function getAllPaths(router) {
   var paths = [];
 
-  Docsify.dom.findAll('.sidebar-nav a:not(.section-link):not([data-nosearch])').forEach(function (node) {
+  helper.dom.findAll('a:not([data-nosearch])').forEach(function (node) {
     var href = node.href;
     var originHref = node.getAttribute('href');
     var path = router.parse(href).path;
@@ -46,9 +35,9 @@ function getAllPaths(router) {
   return paths
 }
 
-function saveData(maxAge, expireKey, indexKey) {
-  localStorage.setItem(expireKey, Date.now() + maxAge);
-  localStorage.setItem(indexKey, JSON.stringify(INDEXS));
+function saveData(maxAge) {
+  localStorage.setItem('docsify.search.expires', Date.now() + maxAge);
+  localStorage.setItem('docsify.search.index', JSON.stringify(INDEXS));
 }
 
 function genIndex(path, content, router, depth) {
@@ -99,14 +88,14 @@ function search(query) {
 
   var loop = function ( i ) {
     var post = data[i];
-    var matchesScore = 0;
+    var isMatch = false;
     var resultStr = '';
     var postTitle = post.title && post.title.trim();
     var postContent = post.body && post.body.trim();
     var postUrl = post.slug || '';
 
-    if (postTitle) {
-      keywords.forEach( function (keyword) {
+    if (postTitle && postContent) {
+      keywords.forEach(function (keyword) {
         // From https://github.com/sindresorhus/escape-string-regexp
         var regEx = new RegExp(
           keyword.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&'),
@@ -115,11 +104,13 @@ function search(query) {
         var indexTitle = -1;
         var indexContent = -1;
 
-        indexTitle = postTitle ? postTitle.search(regEx) : -1;
-        indexContent = postContent ? postContent.search(regEx) : -1;
+        indexTitle = postTitle && postTitle.search(regEx);
+        indexContent = postContent && postContent.search(regEx);
 
-        if (indexTitle >= 0 || indexContent >= 0) {
-          matchesScore += indexTitle >= 0 ? 3 : indexContent >= 0 ? 2 : 0;
+        if (indexTitle < 0 && indexContent < 0) {
+          isMatch = false;
+        } else {
+          isMatch = true;
           if (indexContent < 0) {
             indexContent = 0;
           }
@@ -145,12 +136,11 @@ function search(query) {
         }
       });
 
-      if (matchesScore > 0) {
+      if (isMatch) {
         var matchingPost = {
           title: escapeHtml(postTitle),
-          content: postContent ? resultStr : '',
-          url: postUrl,
-          score: matchesScore
+          content: resultStr,
+          url: postUrl
         };
 
         matchingResults.push(matchingPost);
@@ -160,18 +150,16 @@ function search(query) {
 
   for (var i = 0; i < data.length; i++) loop( i );
 
-  return matchingResults.sort(function (r1, r2) { return r2.score - r1.score; });
+  return matchingResults
 }
 
 function init$1(config, vm) {
+  helper = Docsify;
+
   var isAuto = config.paths === 'auto';
+  var isExpired = localStorage.getItem('docsify.search.expires') < Date.now();
 
-  var expireKey = resolveExpireKey(config.namespace);
-  var indexKey = resolveIndexKey(config.namespace);
-
-  var isExpired = localStorage.getItem(expireKey) < Date.now();
-
-  INDEXS = JSON.parse(localStorage.getItem(indexKey));
+  INDEXS = JSON.parse(localStorage.getItem('docsify.search.index'));
 
   if (isExpired) {
     INDEXS = {};
@@ -188,25 +176,24 @@ function init$1(config, vm) {
       return count++
     }
 
-    Docsify
+    helper
       .get(vm.router.getFile(path), false, vm.config.requestHeaders)
       .then(function (result) {
         INDEXS[path] = genIndex(path, result, vm.router, config.depth);
-        len === ++count && saveData(config.maxAge, expireKey, indexKey);
+        len === ++count && saveData(config.maxAge);
       });
   });
 }
 
 var NO_DATA_TEXT = '';
-var options;
 
 function style() {
-  var code = "\n.sidebar {\n  padding-top: 0;\n}\n\n.search {\n  margin-bottom: 20px;\n  padding: 6px;\n  border-bottom: 1px solid #eee;\n}\n\n.search .input-wrap {\n  display: flex;\n  align-items: center;\n}\n\n.search .results-panel {\n  display: none;\n}\n\n.search .results-panel.show {\n  display: block;\n}\n\n.search input {\n  outline: none;\n  border: none;\n  width: 100%;\n  padding: 0 7px;\n  line-height: 36px;\n  font-size: 14px;\n}\n\n.search input::-webkit-search-decoration,\n.search input::-webkit-search-cancel-button,\n.search input {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}\n.search .clear-button {\n  width: 36px;\n  text-align: right;\n  display: none;\n}\n\n.search .clear-button.show {\n  display: block;\n}\n\n.search .clear-button svg {\n  transform: scale(.5);\n}\n\n.search h2 {\n  font-size: 17px;\n  margin: 10px 0;\n}\n\n.search a {\n  text-decoration: none;\n  color: inherit;\n}\n\n.search .matching-post {\n  border-bottom: 1px solid #eee;\n}\n\n.search .matching-post:last-child {\n  border-bottom: 0;\n}\n\n.search p {\n  font-size: 14px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n}\n\n.search p.empty {\n  text-align: center;\n}\n\n.app-name.hide, .sidebar-nav.hide {\n  display: none;\n}";
+  var code = "\n.sidebar {\n  padding-top: 0;\n}\n\n.search {\n  margin-bottom: 20px;\n  padding: 6px;\n  border-bottom: 1px solid #eee;\n}\n\n.search .input-wrap {\n  display: flex;\n  align-items: center;\n}\n\n.search .results-panel {\n  display: none;\n}\n\n.search .results-panel.show {\n  display: block;\n}\n\n.search input {\n  outline: none;\n  border: none;\n  width: 100%;\n  padding: 0 7px;\n  line-height: 36px;\n  font-size: 14px;\n}\n\n.search input::-webkit-search-decoration,\n.search input::-webkit-search-cancel-button,\n.search input {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}\n.search .clear-button {\n  width: 36px;\n  text-align: right;\n  display: none;\n}\n\n.search .clear-button.show {\n  display: block;\n}\n\n.search .clear-button svg {\n  transform: scale(.5);\n}\n\n.search h2 {\n  font-size: 17px;\n  margin: 10px 0;\n}\n\n.search a {\n  text-decoration: none;\n  color: inherit;\n}\n\n.search .matching-post {\n  border-bottom: 1px solid #eee;\n}\n\n.search .matching-post:last-child {\n  border-bottom: 0;\n}\n\n.search p {\n  font-size: 14px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n}\n\n.search p.empty {\n  text-align: center;\n}";
 
   Docsify.dom.style(code);
 }
 
-function tpl(defaultValue) {
+function tpl(opts, defaultValue) {
   if ( defaultValue === void 0 ) defaultValue = '';
 
   var html =
@@ -222,18 +209,11 @@ function doSearch(value) {
   var $search = Docsify.dom.find('div.search');
   var $panel = Docsify.dom.find($search, '.results-panel');
   var $clearBtn = Docsify.dom.find($search, '.clear-button');
-  var $sidebarNav = Docsify.dom.find('.sidebar-nav');
-  var $appName = Docsify.dom.find('.app-name');
 
   if (!value) {
     $panel.classList.remove('show');
     $clearBtn.classList.remove('show');
     $panel.innerHTML = '';
-
-    if (options.hideOtherSidebarContent) {
-      $sidebarNav.classList.remove('hide');
-      $appName.classList.remove('hide');
-    }
     return
   }
   var matchs = search(value);
@@ -246,10 +226,6 @@ function doSearch(value) {
   $panel.classList.add('show');
   $clearBtn.classList.add('show');
   $panel.innerHTML = html || ("<p class=\"empty\">" + NO_DATA_TEXT + "</p>");
-  if (options.hideOtherSidebarContent) {
-    $sidebarNav.classList.add('hide');
-    $appName.classList.add('hide');
-  }
 }
 
 function bindEvents() {
@@ -300,22 +276,16 @@ function updateNoData(text, path) {
   }
 }
 
-function updateOptions(opts) {
-  options = opts;
-}
-
 function init(opts, vm) {
   var keywords = vm.router.parse().query.s;
 
-  updateOptions(opts);
   style();
-  tpl(keywords);
+  tpl(opts, keywords);
   bindEvents();
   keywords && setTimeout(function (_) { return doSearch(keywords); }, 500);
 }
 
 function update(opts, vm) {
-  updateOptions(opts);
   updatePlaceholder(opts.placeholder, vm.route.path);
   updateNoData(opts.noData, vm.route.path);
 }
@@ -325,9 +295,7 @@ var CONFIG = {
   noData: 'No Results!',
   paths: 'auto',
   depth: 2,
-  maxAge: 86400000, // 1 day
-  hideOtherSidebarContent: false,
-  namespace: undefined
+  maxAge: 86400000 // 1 day
 };
 
 var install = function (hook, vm) {
@@ -342,8 +310,6 @@ var install = function (hook, vm) {
     CONFIG.placeholder = opts.placeholder || CONFIG.placeholder;
     CONFIG.noData = opts.noData || CONFIG.noData;
     CONFIG.depth = opts.depth || CONFIG.depth;
-    CONFIG.hideOtherSidebarContent = opts.hideOtherSidebarContent || CONFIG.hideOtherSidebarContent;
-    CONFIG.namespace = opts.namespace || CONFIG.namespace;
   }
 
   var isAuto = CONFIG.paths === 'auto';

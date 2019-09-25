@@ -22,14 +22,18 @@
   <script>
     window.$docsify = {
       name: 'Panther Docs',
-      loadSidebar: '_sidebar.md',
       autoHeader: true,
-      loadNavbar: '_navbar.md',
+      loadSidebar: '_sidebar.md',
       homepage: 'README.md',
+      loadNavbar: '_navbar.md',
       maxLevel: 3,
       subMaxLevel: 4,
       themeable: {},
       logo: '/panther_logo_thin.png',
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+        '/.*/_navbar.md': '/_navbar.md'
+      }
     }
   </script>
   <script src="assets/js/docsify.min.js"></script>

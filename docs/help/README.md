@@ -1,19 +1,21 @@
-# Getting started
+## Introduction
 
-This section will guide you on how to get started on Panther. There are two main methods to import event logs, one is to use the rsyslog.conf file to import every event that is logged on the host machine or to use the API that is provided.
+TODO -- This is currently a set of pointers for further reading rather than an actual quickstart guide!
+
+There are two main methods to import event logs. One is to use the rsyslog.conf file to import every event that is logged on the host machine, and the other is to use the API.
 
 ## rsyslog
 
-Panther offers the option to recieve event logs directly from rsyslog, this can be achieved by downloading the rsyslog tarball on the admin page. A tutorial on how to set this up is located in the [admin section](/admin/rsyslog).
-___
-## API Key
+Panther offers the option to receive event logs directly from rsyslog, this can be achieved by downloading the rsyslog tarball on the admin page. A tutorial on how to set this up is located in the [admin section](/admin/README#rsyslog-configuration).
 
-Panther offers the option to send event logs through an API, to do this you must first generate an API key. A tutorial on how to use the API and generate an API key is in the [admin section](/admin/apikeys).
+## API
 
-## Setup a Global Rule
+Panther offers the option to submit event logs to it through an API, secured with a key. A tutorial on how to use the API and generate a key is in the [admin section](/admin/README#api-keys).
 
-Global rules are rules that will be applied to every event log that is parsed in. By default you will have some syslog rules and a simple example. There is a tutorial for global rules in the [Rules](/rules/global#global-rules) section.
+## Configure a Global Rule
 
-## Setup a Group rule
+Global rules are rules that will be applied to every event log that is received by Panther. By default, you will have some syslog rules and a simple example. There is a tutorial for adding further global rules in the [Rules](/rules/README#global-rules) section.
 
-There is a tutorial on how to setup group rules in the [Rules](/rules/group#group-rules) section along with a working example in the [API](/api/README#example) section.
+## Configure a Group rule
+
+There is a tutorial on setting up group rules in the [Rules](/rules/README#group-rules) section, along with a working example in the [API](/api/README#example) section.
