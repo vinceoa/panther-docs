@@ -105,27 +105,27 @@ An example of this group rule being used is shown in the
 
 ## Syslog Mappings
 
-Syslog fields need to be mapped to event console fields. These fields
+Syslog message fields need to be mapped to event console fields. These fields
 will then be available for matching in rules processing.
-
-Please note that when events are deduplicated via the `#[code identifier]` field,
-some information may be lost. For example, the PID of a process can change regularly,
-but is not included in the identifier by default, so multiple PIDs may aggregate
-into a single event.
 
 ### Default Event Identifier
 
-The `#[code identifier]` field uniquely identifies an event in the console.
+The event's `identifier` field uniquely identifies an event in the console.
 
 By default this is created by combining the node, severity and summary
-fields: `#[code {node}:{severity}:{summary}]`.
+fields: `{node}:{severity}:{summary}:{tag}`.
 
 Any events with a matching identifier will be grouped together, and
-the corresponding event #[code tally] will increase by 1.
+the corresponding event `tally` will increase by 1.
 
 If no matching event identifier is found, then a new event is created.
 
 Timestamps are also stored for each event.
+
+Please note that when events are deduplicated via the `identifier` field,
+some information may be lost. For example, the PID of a process can change regularly,
+but is not included in the identifier by default, so multiple PIDs may aggregate
+into a single event.
 
 ### Severity Mapping
 

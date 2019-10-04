@@ -1,7 +1,7 @@
 ![](_media/PANTHER-LOGO_TRANSPARENT_BG.png)
 **Panther** is an event consolidation and management application that centralizes and manages events from IT systems, networks and applications in a single console. Support and Operations teams benefit from increased efficiency and speed to problem resolution by being able to quickly and easily identify the monitoring events that are most important.
 
-Use the Panther Console and Rules to filter, acknowledge, group, enrich, de-duplicate, aggregate, categorise, assign ownership and manage events through an (ITIL) Event Management lifecycle. Events can be securely sourced and processed from any Syslog source and/or via the Panther API.
+Use the Panther [Console](/console/#overview) and [Rules](/rules/#overview) to filter, acknowledge, group, enrich, de-duplicate, aggregate, categorize, assign ownership and manage events through an (ITSM) Event Management lifecycle. Events can be securely sourced and processed from any Syslog source and/or via the Panther [API](/api/#introduction).
 
 _Watch your Events like a Panther!_
 ## IT Support - First Line Operations
@@ -20,8 +20,8 @@ _Something has just happened:_ High performing IT Support teams are able to quic
 
 This is achieved by having clear **visibility** of what needs actioning and being able to adapt to change - **quickly** and **continuously**.
 
-* [ITIL Event Management](/about/#itil-event-management)
-* [ITIL Incident Management](/about/#itil-event-management)
+* [ITSM Event Management](/about/#itsm-event-management)
+* [ITSM Incident Management](/about/#itsm-incident-management)
 
 
 ## Panther Key Features
@@ -50,8 +50,8 @@ This is achieved by having clear **visibility** of what needs actioning and bein
  * Global/Group
  * Enrich
  * De-Duplicate
- * Filter/Categorise
- * Prioritise
+ * Filter/Categorize
+ * Prioritize
  * GUI Rule builder
 
 ![](_media/Rules.png)
