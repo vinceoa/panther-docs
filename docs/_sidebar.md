@@ -1,6 +1,7 @@
 - [Home](/README.md)
 - [About](/about/README.md)
 - [Getting Started](/help/README.md)
+- [Client Configuration](/config/README.md)
 - [Dashboard](/dashboard/README.md)
 - [Console](/console/README.md)
 - [Rules](rules/README.md)
@@ -8,5 +9,4 @@
 - [API](/api/README.md)
 - [Admin](/admin/README.md)
 - [Settings](/settings/README.md)
-
-© Open Answers Ltd 2019
+- [License](/license/README.md)

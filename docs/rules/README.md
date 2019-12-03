@@ -103,6 +103,29 @@ for .*` to the Operating System group and setting the severity to 3.
 An example of this group rule being used is shown in the
 [API](/api/README#example) section.
 
+## Schedules
+
+Schedules can be used to specify specific times of the week, enabling Rules to only match under those conditions.
+
+![](_media/Schedules.png)
+
+The `Name` is used to identify the schedule when editing Rules or Groups.  It must be unique.
+
+`Start` and `End` specify a time range in the format of `HH:MM`. If the `Start` time is after the `End` time then the following conditions shall match:
+
+ + From midnight to the `End` time
+ + From the `Start` time till midnight 
+
+Days of the week can be chosen with the checkboxes
+
+ + *S*unday
+ + *M*onday
+ + *T*uesday
+ + *W*ednesday
+ + *T*hursday
+ + *F*riday
+ + *S*aturday
+
 ## Syslog Mappings
 
 Syslog message fields need to be mapped to event console fields. These fields
@@ -112,8 +135,8 @@ will then be available for matching in rules processing.
 
 The event's `identifier` field uniquely identifies an event in the console.
 
-By default this is created by combining the node, severity and summary
-fields: `{node}:{severity}:{summary}:{tag}`.
+By default this is created by combining the node, severity, tag and summary
+fields: `{node}:{severity}:{tag}:{summary}`.
 
 Any events with a matching identifier will be grouped together, and
 the corresponding event `tally` will increase by 1.
