@@ -10,3 +10,5 @@
 - [Admin](/admin/README.md)
 - [Settings](/settings/README.md)
 - [License](/license/README.md)
+
+© Open Answers Ltd 2019
