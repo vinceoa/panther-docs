@@ -59,8 +59,8 @@ Select the appropriate option for your client and click the `Download`
 button.
 
 The archives are downloaded in an appropriate format for each system:
-linux archives are provided in uncompressed `tar` format, while
-windows archives are built using `zip`.
+Linux archives are provided in uncompressed `tar` format, while
+Windows archives are built using `zip`.
 
 (Note that the same certificates and keys are provided in each
 archive, so for custom configurations the choice of download is
@@ -110,8 +110,8 @@ main rsyslog package.
 
 ### Install the configuration files
 
-The downloaded resources in `rsyslog.tar` need to be installed into
-the system rsyslog configuration directory.
+The downloaded resources in `rsyslog-config-linux.tar` need to be
+installed into the system rsyslog configuration directory.
 
 The following commands will extract the archive into
 `/etc/rsyslog-client.d`, creating it if necessary. If the directory
@@ -120,7 +120,7 @@ in case any previously configured files are overwritten.
 
 ```console
 [root@localhost ~]# cd /etc
-[root@localhost /etc]# tar -xvf /path/to/rsyslog.tar
+[root@localhost /etc]# tar -xvf /path/to/rsyslog-config-linux.tar
 ```
 
 ### Edit the main rsyslog configuration
@@ -181,8 +181,8 @@ Once installed, the steps to integrate NXLog with Panther are:
 
 To begin with, download the configuration archive
 [as described above.](#download-configuration-archive)
-The downloaded resources in `nxlog.tar` then need to be installed into
-the system NXLog configuration directory.
+The downloaded resources in `nxlog-config-linux.tar` then need to be
+installed into the system NXLog configuration directory.
 
 The following commands will extract the archive into `/etc/nxlog`,
 which should have been created during the NXLog installation.  Note
@@ -191,7 +191,7 @@ if one already exists.
 
 ```console
 [root@localhost ~]# cd /etc/nxlog
-[root@localhost /etc/nxlog]# tar -xvf /path/to/nxlog.tar
+[root@localhost /etc/nxlog]# tar -xvf /path/to/nxlog-config-linux.tar
 ```
 
 Apart from overwriting the main `nxlog.conf`, this will extract the
@@ -222,7 +222,7 @@ possible to restart NXLog by calling the init script directly:
 
 ## NXLog Configuration (Windows)
 
-Download the windows installer for the NXLog Community Edition
+Download the Windows installer for the NXLog Community Edition
 [from the official website.](https://nxlog.co/products/nxlog-community-edition/download)
 
 Install the package by running the installer, but also see
@@ -237,22 +237,23 @@ Once installed, the steps to integrate NXLog with Panther are:
 
 ### Install the configuration files
 
-Once the windows configuration archive has been downloaded
+Once the Windows configuration archive has been downloaded
 [as described above,](#download-configuration-archive) the contents of
-`nxlog.zip` must be overlaid onto the base directory of the installed
-NXLog package.  If the default install options were used, this will
-normally be `C:\Program Files\nxlog`.
+`nxlog-config-windows.zip` must be overlaid onto the base directory of
+the installed NXLog package.  If the default install options were
+used, this will normally be `C:\Program Files (x86)\nxlog`.
 
-Opening this directory with windows explorer will show that it
+Opening this directory with the Windows File Explorer will show that it
 contains `cert` and `conf` sub-directories, among others. While the
 `cert` directory should be empty, the `conf` directory may contain a
 sample `nxlog.conf`, which should be renamed `nxlog.dist` in order to
 prevent any clash with the new configuration.
 
-Extract the downloaded `nxlog.zip` Panther configuration archive by
-clicking on it and selecting the `extract to` option, specifying the
-base directory NXLog was installed into -- normally `C:\Program
-Files\nxlog` -- containing the `cert` and `conf` sub-directories.
+Extract the downloaded `nxlog-config-windows.zip` Panther
+configuration archive by clicking on it and selecting the `extract to`
+option, specifying the base directory NXLog was installed into --
+normally `C:\Program Files\nxlog` -- containing the `cert` and `conf`
+sub-directories.
 
 This will copy the certificates and key files into the empty `cert`
 directory, along with a new `nxlog.conf` into the `conf`

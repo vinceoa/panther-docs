@@ -48,32 +48,47 @@ See also:
  * [Syslog Mappings](rules/#syslog-mappings)
 
 ## Set Up Event Sources
-There are two main methods to import event logs. Within Panther these are implemented by the Syslog and HTTP Agents.
 
-### Syslog
-Panther offers the option to receive event logs directly using the Syslog protocol. 
+There are currently two main methods to import event logs into Panther
+from client event sources. The most straightforward of these is by
+means of compatible logging software, while an HTTP based API is also
+available for integration with bespoke client applications.
 
-For convenience, this can be achieved by downloading a pre-configured
-rsyslog tarball on the admin page. A tutorial on how to set this up is
-provided in the [client configuration section](/config/README#rsyslog-configuration).
+### Logging Software
 
-### HTTP API
-Panther offers the option to submit event logs to it through an API, secured with a key. A tutorial on how to use the API and generate a key is in the [admin section](/admin/README#api-keys).
+Panther offers the capability to receive event logs directly from
+supported third-party logging software.  In order to facilitate this,
+archives of configuration files are available for download from the
+Panther `admin` page.
+
+More detailed information on the download procedure is available,
+along with configuration guides for each supported system, in the
+[client configuration section](/config/README).
+
+### REST API
+
+For use cases where programmatic control is needed over the submission
+of event log entries, Panther provides an HTTP based REST API,
+incorporating a key for security.
+
+More details on this are available in [the API section](/api/README).
 
 ### Graylog (future)
 
 ### SNMP Trap (future)
 
 ## Event Source Examples
-Below is a list of just some of the freely available software packages that can generate events that Panther can manage.
 
-| Software  | How  |
-| --------- | ---- |
-| Ryslog    | TODO |
-| Syslog-ng | TODO |
-| NXLog     | TODO |
-| Log4j     | TODO |
-| Log4Net   | TODO |
+The freely available software packages listed below can act as event
+sources for Panther.
+
+| Software | Official Website | Panther Configuration |
+| -------- | ---------------- | --------------------- |
+| ![NXLog](_media/nxlog-logo.png ':size=120') | [Documentation](https://nxlog.co/documentation) | [Linux](/config/README#nxlog-linux), [Windows](/config/README#nxlog-windows) |
+| ![Rsyslog](_media/rsyslog-logo.png ':size=120') | [Documentation](https://www.rsyslog.com/doc/master/index.html) | [Linux](/config/README#rsyslog-linux) |
+| Syslog-ng | TODO | TODO |
+| Log4j     | TODO | TODO |
+| Log4Net   | TODO | TODO |
 
 Examples of approaches that can be used to monitor infrastructure and applications.
 

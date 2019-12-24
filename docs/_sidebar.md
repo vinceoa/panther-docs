@@ -11,4 +11,4 @@
 - [Settings](/settings/README.md)
 - [License](/license/README.md)
 
-© Open Answers Ltd 2019
+© Open Answers Ltd 2020
