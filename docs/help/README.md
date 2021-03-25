@@ -1,5 +1,5 @@
 ## Introduction
-The (beta) cloud-based version of Panther will be accessible at https://panther.support. After a simple Sign-up process your dedicated secure Panther instance will be automatically provisioned within the Panther Cloud. When signing-up you will be asked to choose a unique name for your Console which will then be accessible at https://{your-console-name}.panther.support.
+The (beta) cloud-based version of Panther will be accessible at https://app.panther.support. After a simple Sign-up process your dedicated secure Panther instance will be automatically provisioned within the Panther Cloud. When signing-up you will be asked to choose a unique name for your Console which will then be accessible at https://{your-console-name}.app.panther.support.
 
 ![](../about/_media/PantherArchitecture.png ':size=500')
 
