@@ -1,0 +1,89 @@
+title: Panther Docs
+email: panther-support@openanswers.co.uk
+baseurl: "/panther-docs" # the subpath of your site, e.g. /blog
+url: "https://openanswers.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+logo: "/img/panther_logo_thin.png"
+permalink: pretty
+
+image:
+  path: "img/panther_logo_thin.png"
+
+# Exclude from processing.
+exclude:
+  - Dockerfile
+  - docker-compose.yml
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - SUPPORT.md
+  - SECURITY.md
+  - templates/
+  - .vscode/
+  - src/
+  - tests/
+  - .devcontainer/
+  - docs/concepts/
+  - docs/commands/
+  - docs/release.md
+  - vendor/bundle
+
+theme: just-the-docs
+color_scheme: panther-dark
+plugins:
+  - jekyll-feed
+  - jekyll-spaceship
+  - jekyll-sitemap
+  - jekyll-toc
+#  - jekyll-seo-tag
+
+jekyll-spaceship:
+  processors:
+    - table-processor
+    - mathjax-processor
+    - plantuml-processor
+    - mermaid-processor
+    - polyfill-processor
+    - media-processor
+    - emoji-processor
+    - element-processor
+  mermaid-processor:
+    mode: default # mode value 'pre-fetch' for fetching image at building stage or 'default'
+    css:
+      class: mermaid
+    syntax:
+      code: "mermaid!"
+      custom: ["@startmermaid", "@endmermaid"]
+    config:
+      theme: default
+    src: https://mermaid.ink/svg/
+
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub."
+gh_edit_repository: "https://github.com/openanswers/panther-docs" # the github URL for your repo
+gh_edit_branch: "master" # the branch that your docs is served from
+# gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+aux_links_new_tab: true
+aux_links:
+  "Open Answers":
+    - "//openanswers.co.uk"
+  "app.panther.support":
+    - "//app.panther.support"
+
+panther:
+  baseurl: app.panther.support
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      toc: true
+      image: "img/panther_logo_border.png"
+
+search:
+  rel_url: false
+
+twitter:
+  card: summary_large_image
