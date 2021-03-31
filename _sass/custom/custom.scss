@@ -1,0 +1,109 @@
+#toc {
+  @include mq(xl) {
+    position: fixed;
+    top: 5rem;
+    right: 20px;
+    overflow-y: auto;
+  }
+
+  .toc-entry {
+    font-size: $font-size-4;
+  }
+}
+#toc::before {
+  content: "On this page";
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.side-bar {
+  z-index: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $sidebar-color;
+
+  @include mq(md) {
+    flex-wrap: nowrap;
+    position: fixed;
+    width: $nav-width-md;
+    height: 100%;
+    flex-direction: column;
+    border-right: $border $border-color;
+    align-items: flex-end;
+  }
+
+  @include mq(lg) {
+    width: calc((100% - #{$nav-width + $content-width}) / 4 + #{$nav-width});
+    min-width: $nav-width;
+  }
+
+  .site-title {
+    padding: 0px;
+    padding-right: 0.2rem;
+  }
+}
+
+.main {
+  footer {
+    background-color: $body-background-color;
+    color: white a {
+      color: whitesmoke;
+    }
+  }
+
+  @include mq(md) {
+    position: relative;
+    max-width: $content-width;
+    margin-left: $nav-width-md;
+  }
+
+  @include mq(lg) {
+    margin-left: calc(
+      (100% - #{$nav-width + $content-width}) / 4 + #{$nav-width}
+    );
+    margin-right: 300px;
+  }
+
+  #main-header {
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+  }
+}
+
+.search-input {
+  font-size: $font-size-6;
+  color: $search-result-preview-color;
+  background: linear-gradient(#ddd, #000) center bottom 5px / calc(100% - 50px)
+    2px no-repeat;
+}
+
+.search-result-preview {
+  font-size: $font-size-3;
+}
+.search-result-doc-title {
+  font-size: $font-size-4;
+}
+
+.side-bar {
+  nav {
+    //color: #ccc;
+  }
+  .nav-list-link {
+    //color: #000;
+  }
+  // color: rgb(221, 220, 220);
+}
+
+#markdown-toc::before {
+  content: "Contents";
+  margin-left: -$spacing-unit;
+  line-height: 200%;
+  font-weight: bold;
+  font-size: 1em * 1.125;
+}
+
+.breadcrumb-nav-list-item {
+  display: table-cell;
+  @include fs-3;
+}

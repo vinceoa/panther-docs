@@ -1,5 +1,12 @@
-# Panther Docs
-[Panther](https://www.openanswers.co.uk/products/panther) is an event consolidation and management application.
 
-See the [Panther Documentation](https://openanswers.github.io/panther-docs) for more details.
+## Online documentation
 
+is accessible at [openanswers.github.io/panther-docs](https://openanswers.github.io/panther-docs)
+
+## Running Locally
+
+```sh
+docker-compose up
+```
+
+Then browse to http://localhost:4000
