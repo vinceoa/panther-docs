@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - vinceoa-patch-1
 
 jobs:
   github-pages:
