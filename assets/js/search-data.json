@@ -551,264 +551,324 @@
     "url": "https://openanswers.github.io/panther-docs/panther/views",
     "relUrl": "/panther/views"
   },"92": {
+    "doc": "AWS events",
+    "title": "AWS setup",
+    "content": "This guide will walk you through deploying an AWS Lambda function to collect event data and send to Panther via the HTTP API. ",
+    "url": "https://openanswers.github.io/panther-docs/guides/aws-events#aws-setup",
+    "relUrl": "/guides/aws-events#aws-setup"
+  },"93": {
+    "doc": "AWS events",
+    "title": "Checklist",
+    "content": "In order to send events from your AWS estate to https://app.panther.support you will need the following . | Panther AWS Events code | AWS - CLI | AWS - SAM | Panther API Key | . ",
+    "url": "https://openanswers.github.io/panther-docs/guides/aws-events#checklist",
+    "relUrl": "/guides/aws-events#checklist"
+  },"94": {
+    "doc": "AWS events",
+    "title": "System Design",
+    "content": ". ",
+    "url": "https://openanswers.github.io/panther-docs/guides/aws-events#system-design",
+    "relUrl": "/guides/aws-events#system-design"
+  },"95": {
+    "doc": "AWS events",
+    "title": "Installation",
+    "content": "First you’ll need to get the code: . $ git clone https://github.com/OpenAnswers/panther-aws-events.git . The instructions in the README.md will walk you through the setup. ",
+    "url": "https://openanswers.github.io/panther-docs/guides/aws-events#installation",
+    "relUrl": "/guides/aws-events#installation"
+  },"96": {
+    "doc": "AWS events",
+    "title": "Verify credentials",
+    "content": "$ aws iam get-user . ",
+    "url": "https://openanswers.github.io/panther-docs/guides/aws-events#verify-credentials",
+    "relUrl": "/guides/aws-events#verify-credentials"
+  },"97": {
+    "doc": "AWS events",
+    "title": "Testing events",
+    "content": "After installation has completed a new lambda function will have been registered with the supplied Stack Name by default this will be AWS-Events2Panther. ",
+    "url": "https://openanswers.github.io/panther-docs/guides/aws-events#testing-events",
+    "relUrl": "/guides/aws-events#testing-events"
+  },"98": {
+    "doc": "AWS events",
+    "title": "Simulating an EC2 instance state change",
+    "content": ". | Find your lambda functions, e.g. | Add a new test event with the following definition: . | . { \"id\":\"7bf73129-1428-4cd3-a780-95db273d1602\", \"detail-type\":\"EC2 Instance State-change Notification\", \"source\":\"aws.ec2\", \"account\":\"123456789012\", \"time\":\"2019-11-11T21:29:54Z\", \"region\":\"us-east-1\", \"resources\":[ \"arn:aws:ec2:us-east-1:123456789012:instance/i-abcd1111\" ], \"detail\":{ \"instance-id\":\"i-abcd1111\", \"state\":\"pending\" } } . e.g. | Click the Invoke button to send the event . | Verify in you Panther console that the event was received . | . | Invoke it a couple more times and the tally in Panther has increased: | . ",
+    "url": "https://openanswers.github.io/panther-docs/guides/aws-events#simulating-an-ec2-instance-state-change",
+    "relUrl": "/guides/aws-events#simulating-an-ec2-instance-state-change"
+  },"99": {
+    "doc": "AWS events",
+    "title": "AWS events",
+    "content": " ",
+    "url": "https://openanswers.github.io/panther-docs/guides/aws-events",
+    "relUrl": "/guides/aws-events"
+  },"100": {
+    "doc": "Panther guides",
+    "title": "Intergration with Panther",
+    "content": " ",
+    "url": "https://openanswers.github.io/panther-docs/guides#intergration-with-panther",
+    "relUrl": "/guides#intergration-with-panther"
+  },"101": {
+    "doc": "Panther guides",
+    "title": "Panther guides",
+    "content": " ",
+    "url": "https://openanswers.github.io/panther-docs/guides",
+    "relUrl": "/guides"
+  },"102": {
     "doc": "Home",
     "title": "IT Support - First Line Operations",
     "content": "defintion: Event /ɪˈvɛnt/ noun a thing that happens or takes place, especially one of importance. Something has just happened: High performing IT Support teams are able to quickly respond to events by being able to answer these questions quickly: . | What does it mean? | How important is it? | Does action need to be taken? | Who is owning it? | If it happens again, do I want to know about it? | . This is achieved by having clear visibility of what needs actioning and being able to adapt to change - quickly and continuously. | ITSM Event Management | ITSM Incident Management | . ",
     "url": "https://openanswers.github.io/panther-docs/#it-support---first-line-operations",
     "relUrl": "/#it-support---first-line-operations"
-  },"93": {
+  },"103": {
     "doc": "Home",
     "title": "Panther Key Features",
     "content": " ",
     "url": "https://openanswers.github.io/panther-docs/#panther-key-features",
     "relUrl": "/#panther-key-features"
-  },"94": {
+  },"104": {
     "doc": "Home",
     "title": "Dashboard",
     "content": ". | Summary | Inventory | Activity Stream | . | Dashboard Documentation | . ",
     "url": "https://openanswers.github.io/panther-docs/#dashboard",
     "relUrl": "/#dashboard"
-  },"95": {
+  },"105": {
     "doc": "Home",
     "title": "Console",
     "content": ". | Event Management | Assign | Add Notes | Modify/Clear | Create rule from event | . | Console Documentation | . ",
     "url": "https://openanswers.github.io/panther-docs/#console",
     "relUrl": "/#console"
-  },"96": {
+  },"106": {
     "doc": "Home",
     "title": "Rules",
     "content": ". | Global/Group | Enrich | De-Duplicate | Filter/Categorize | Prioritize | GUI Rule builder | . | Rules Documentation | . ",
     "url": "https://openanswers.github.io/panther-docs/#rules",
     "relUrl": "/#rules"
-  },"97": {
+  },"107": {
     "doc": "Home",
     "title": "Views",
     "content": ". | Simple, configurable filters via field/value pairs | . | Views Documentation | . ",
     "url": "https://openanswers.github.io/panther-docs/#views",
     "relUrl": "/#views"
-  },"98": {
+  },"108": {
     "doc": "Home",
     "title": "API Console",
     "content": ". | Create first events using API | . | API Documentation | . ",
     "url": "https://openanswers.github.io/panther-docs/#api-console",
     "relUrl": "/#api-console"
-  },"99": {
+  },"109": {
     "doc": "Home",
     "title": "Admin",
     "content": ". | Users | Syslog config | Certs and Keys | API Keys | . | Admin Documentation | . ",
     "url": "https://openanswers.github.io/panther-docs/#admin",
     "relUrl": "/#admin"
-  },"100": {
+  },"110": {
     "doc": "Home",
     "title": "Home",
     "content": ". Panther is an event consolidation and management application that centralizes and manages events from IT systems, networks and applications in a single console. Support and Operations teams benefit from increased efficiency and speed to problem resolution by being able to quickly and easily identify the monitoring events that are most important. Use the Panther Console and Rules to filter, acknowledge, group, enrich, de-duplicate, aggregate, categorize, assign ownership and manage events through an (ITSM) Event Management lifecycle. Events can be securely sourced and processed from any Syslog source and/or via the Panther API. Watch your Events like a Panther! . ",
     "url": "https://openanswers.github.io/panther-docs/",
     "relUrl": "/"
-  },"101": {
+  },"111": {
     "doc": "Event schedule selection",
     "title": "Schedules",
     "content": "Schedules can be used to specify specific times of the week, enabling Rules to only match under those conditions. The Name is used to identify the schedule when editing Rules or Groups. It must be unique. Start and End specify a time range in the format of HH:MM. If the Start time is after the End time then the following conditions shall match: . | From midnight to the End time | From the Start time till midnight | . Days of the week can be chosen with the checkboxes . | Sunday | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/schedules#schedules",
     "relUrl": "/panther/rules/schedules#schedules"
-  },"102": {
+  },"112": {
     "doc": "Event schedule selection",
     "title": "Event schedule selection",
     "content": " ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/schedules",
     "relUrl": "/panther/rules/schedules"
-  },"103": {
+  },"113": {
     "doc": "Event selection",
     "title": "Selecting Events",
     "content": "Rules need to be able to select an event to apply an action to. Multiple “select” options will combined into a logical “and” operation. Logical “or” operations can be achieved by: . | specifying an array of values for a “select” field | using a regular expression | operator | specifying an additional rule in the ruleset | . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/selection#selecting-events",
     "relUrl": "/panther/rules/selection#selecting-events"
-  },"104": {
+  },"114": {
     "doc": "Event selection",
     "title": "match",
     "content": "Search a field for a match. When you supply some string the match becomes /some string/ with any regex literals escaped: . match: this_field: \"some string\" . You can also specify a regex directly with js-yaml type syntax . match: that_field: !!js/regexp /some \\d+ digit/ . You can achieve a logical “or” by specifying an array of objects . match: other_field: - string search - !!js/regexp /regex search/ - more . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/selection#match",
     "relUrl": "/panther/rules/selection#match"
-  },"105": {
+  },"115": {
     "doc": "Event selection",
     "title": "equals",
     "content": "Exact match of the field some_field against the value 7: . equals: some_field: 7 . You can achieve a logical “or” by specifying an array of values: . match: other_field: - value - temp - over . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/selection#equals",
     "relUrl": "/panther/rules/selection#equals"
-  },"106": {
+  },"116": {
     "doc": "Event selection",
     "title": "field_exists",
     "content": "Test for the existence of a field: . field_exists: some_name_of_existing_field . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/selection#field_exists",
     "relUrl": "/panther/rules/selection#field_exists"
-  },"107": {
+  },"117": {
     "doc": "Event selection",
     "title": "field_missing",
     "content": "Test whether a field is missing: . field_missing: some_name_of_missing_field . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/selection#field_missing",
     "relUrl": "/panther/rules/selection#field_missing"
-  },"108": {
+  },"118": {
     "doc": "Event selection",
     "title": "starts_with",
     "content": "Field starts with the string Starting Text. Like a regular expression /^Starting Text/ . starts_with a_field_name: 'Starting Text' . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/selection#starts_with",
     "relUrl": "/panther/rules/selection#starts_with"
-  },"109": {
+  },"119": {
     "doc": "Event selection",
     "title": "ends_with",
     "content": "Field ends with the string Ending Text. Like a regular expression /Ending Text$/ . ends_with a_field_name: 'Ending Text' . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/selection#ends_with",
     "relUrl": "/panther/rules/selection#ends_with"
-  },"110": {
+  },"120": {
     "doc": "Event selection",
     "title": "Actions",
     "content": " ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/selection#actions",
     "relUrl": "/panther/rules/selection#actions"
-  },"111": {
+  },"121": {
     "doc": "Event selection",
     "title": "set",
     "content": ". | Set a field to a value: | . - name: super_set equals: node: 'super.man.com' set: group: 'Krypton' . | Set a field by using the value from another field: | . - name: prefix summary with node name set: summary: '{node} - {summary}' match: summary: /hello world/ . | Set a field using a paramaterized pattern match: | . - name: change the words around set: summary: '{match.2} {match.1} number: {match.2}' match: summary: /^(\\w+) (\\d+) (\\w+).*/ . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/selection#set",
     "relUrl": "/panther/rules/selection#set"
-  },"112": {
+  },"122": {
     "doc": "Event selection",
     "title": "replace",
     "content": "A field holding the value to be replaced must be specified using field and the value to be replaced using this. The new value must be specified using with: . - name: other_replace match: summary: 'repeating repeating repeating' replace: field: message this: 'repeating' with: 'newrepeat' . A warning will be logged if the replacement doesn’t find a match. ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/selection#replace",
     "relUrl": "/panther/rules/selection#replace"
-  },"113": {
+  },"123": {
     "doc": "Event selection",
     "title": "discard",
     "content": "Sets the severity of the alert to -1, so that it will be discarded: . - name: other_replace match:: node: 'spurious.alerts' discard: true . TODO: is this incomplete? regex replace a value . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/selection#discard",
     "relUrl": "/panther/rules/selection#discard"
-  },"114": {
+  },"124": {
     "doc": "Event selection",
     "title": "Event selection",
     "content": " ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/selection",
     "relUrl": "/panther/rules/selection"
-  },"115": {
+  },"125": {
     "doc": "Settings",
     "title": "Overview",
     "content": "TODO. ",
     "url": "https://openanswers.github.io/panther-docs/panther/settings#overview",
     "relUrl": "/panther/settings#overview"
-  },"116": {
+  },"126": {
     "doc": "Settings",
     "title": "Settings",
     "content": " ",
     "url": "https://openanswers.github.io/panther-docs/panther/settings",
     "relUrl": "/panther/settings"
-  },"117": {
+  },"127": {
     "doc": "Keyboard Shortcuts",
     "title": "Keyboard Shortcuts",
     "content": " ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts",
     "relUrl": "/panther/console/shortcuts"
-  },"118": {
+  },"128": {
     "doc": "Keyboard Shortcuts",
     "title": "Select next event",
     "content": "up/down . ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts#select-next-event",
     "relUrl": "/panther/console/shortcuts#select-next-event"
-  },"119": {
+  },"129": {
     "doc": "Keyboard Shortcuts",
     "title": "Add event to selection",
     "content": "shift + up / shift + down . ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts#add-event-to-selection",
     "relUrl": "/panther/console/shortcuts#add-event-to-selection"
-  },"120": {
+  },"130": {
     "doc": "Keyboard Shortcuts",
     "title": "Delete the selected events",
     "content": "backspace / delete . ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts#delete-the-selected-events",
     "relUrl": "/panther/console/shortcuts#delete-the-selected-events"
-  },"121": {
+  },"131": {
     "doc": "Keyboard Shortcuts",
     "title": "Open the events detailed information",
     "content": "enter / return . ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts#open-the-events-detailed-information",
     "relUrl": "/panther/console/shortcuts#open-the-events-detailed-information"
-  },"122": {
+  },"132": {
     "doc": "Keyboard Shortcuts",
     "title": "Select all events in your view",
     "content": "ctrl + a . ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts#select-all-events-in-your-view",
     "relUrl": "/panther/console/shortcuts#select-all-events-in-your-view"
-  },"123": {
+  },"133": {
     "doc": "Keyboard Shortcuts",
     "title": "Clear selection",
     "content": "escape . ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts#clear-selection",
     "relUrl": "/panther/console/shortcuts#clear-selection"
-  },"124": {
+  },"134": {
     "doc": "Keyboard Shortcuts",
     "title": "Copy selected rows to clipboard",
     "content": "ctrl + c . ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts#copy-selected-rows-to-clipboard",
     "relUrl": "/panther/console/shortcuts#copy-selected-rows-to-clipboard"
-  },"125": {
+  },"135": {
     "doc": "Keyboard Shortcuts",
     "title": "Assign the selected events to a user",
     "content": "a . ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts#assign-the-selected-events-to-a-user",
     "relUrl": "/panther/console/shortcuts#assign-the-selected-events-to-a-user"
-  },"126": {
+  },"136": {
     "doc": "Keyboard Shortcuts",
     "title": "Clear selected events",
     "content": "c . ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts#clear-selected-events",
     "relUrl": "/panther/console/shortcuts#clear-selected-events"
-  },"127": {
+  },"137": {
     "doc": "Keyboard Shortcuts",
     "title": "Toggle the Acknowledged flag of the event",
     "content": "k . ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts#toggle-the-acknowledged-flag-of-the-event",
     "relUrl": "/panther/console/shortcuts#toggle-the-acknowledged-flag-of-the-event"
-  },"128": {
+  },"138": {
     "doc": "Keyboard Shortcuts",
     "title": "Set the severity for selected events",
     "content": "s . ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts#set-the-severity-for-selected-events",
     "relUrl": "/panther/console/shortcuts#set-the-severity-for-selected-events"
-  },"129": {
+  },"139": {
     "doc": "Keyboard Shortcuts",
     "title": "Show the help dialogue",
     "content": "? / h . ",
     "url": "https://openanswers.github.io/panther-docs/panther/console/shortcuts#show-the-help-dialogue",
     "relUrl": "/panther/console/shortcuts#show-the-help-dialogue"
-  },"130": {
+  },"140": {
     "doc": "Rules file (yaml)",
     "title": "Rules location",
     "content": "Depending on which way you installed Panther there are differing locations of the rule files. ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/yaml#rules-location",
     "relUrl": "/panther/rules/yaml#rules-location"
-  },"131": {
+  },"141": {
     "doc": "Rules file (yaml)",
     "title": "When using docker-compose.yml",
     "content": "A docker volume will have been created, the name is comprised of two parts. &lt;directory-name&gt;_rules_vol . For example if your docker-compose.yml is in a directory called panther then the docker volume will be called panther_rules-vol . e.g. [root@localhost ~]# ls -l /var/lib/docker/volumes/panther-core_rules-vol/_data/ total 14 -rw-r--r-- 1 ansible ansible 588 Jul 7 2020 http.rules.yml -rw-r--r-- 1 ansible ansible 860 Jul 7 2020 server.rules.yml -rw-r--r-- 1 ansible ansible 2256 Jul 7 2020 syslogd.rules.yml . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/yaml#when-using-docker-composeyml",
     "relUrl": "/panther/rules/yaml#when-using-docker-composeyml"
-  },"132": {
+  },"142": {
     "doc": "Rules file (yaml)",
     "title": "When using app.panther.support",
     "content": "The rules are not directly accessible to the end user. ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/yaml#when-using-apppanthersupport",
     "relUrl": "/panther/rules/yaml#when-using-apppanthersupport"
-  },"133": {
+  },"143": {
     "doc": "Rules file (yaml)",
     "title": "When running the source code",
     "content": "The rules are located under rules/ . e.g. [root@localhost panther-core]# ls -l rules/ total 23 -rw-r--r-- 1 root root 588 Feb 23 11:36 http.rules.yml -rw-r--r-- 1 root root 815 Mar 26 16:12 server.rules.yml -rw-r--r-- 1 root root 2256 Feb 23 11:36 syslogd.rules.yml . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/yaml#when-running-the-source-code",
     "relUrl": "/panther/rules/yaml#when-running-the-source-code"
-  },"134": {
+  },"144": {
     "doc": "Rules file (yaml)",
     "title": "Rules format",
     "content": "The server.rules.yml has three main sections . globals: groups: schedules: . ",
     "url": "https://openanswers.github.io/panther-docs/panther/rules/yaml#rules-format",
     "relUrl": "/panther/rules/yaml#rules-format"
-  },"135": {
+  },"145": {
     "doc": "Rules file (yaml)",
     "title": "Rules file (yaml)",
     "content": " ",
