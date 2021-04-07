@@ -5,6 +5,8 @@ nav_order: 3
 permalink: /panther/config
 layout: template
 description: Configuring events reception
+twitter:
+  card: summary
 ---
 
 # Overview
