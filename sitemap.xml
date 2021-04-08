@@ -55,6 +55,9 @@
 <loc>https://openanswers.github.io/panther-docs/</loc>
 </url>
 <url>
+<loc>https://openanswers.github.io/panther-docs/guides/aws-events-quickstart</loc>
+</url>
+<url>
 <loc>https://openanswers.github.io/panther-docs/panther/rules/schedules</loc>
 </url>
 <url>
@@ -65,6 +68,9 @@
 </url>
 <url>
 <loc>https://openanswers.github.io/panther-docs/panther/console/shortcuts</loc>
+</url>
+<url>
+<loc>https://openanswers.github.io/panther-docs/guides/aws-events-testing</loc>
 </url>
 <url>
 <loc>https://openanswers.github.io/panther-docs/panther/rules/yaml</loc>
