@@ -109,7 +109,7 @@
   },"18": {
     "doc": "AWS events (detailed)",
     "title": "3.2. Setting up event triggers in the AWS console",
-    "content": "The SAM CloudFormation template includes a rule to accept all events, and send them to the lambda function. However you can also disable that one and create your own more specific rules. Rules can be accessed from two locations: . console.aws.amazon.com/cloudwatch/home . Or here: . console.aws.amazon.com/events/home . On either page you should click on the ‘Create rule’ button. Under Define pattern, select Event pattern, then select Pre-defined pattern by service, select ‘AWS’, then select ‘All Services’. This will behave in the same way as CloudTrail, by passing all AWS events to the target. Next, under Select targets ensure the target is set to ‘Lambda function’, and then select the function id for the one you uploaded. It sill be in the format: AWS-Events2Panther-{stack name} . Once done, you can click on the Create button at the bottom of the page. ",
+    "content": "The SAM CloudFormation template includes a rule to accept all events, and send them to the lambda function. However you can also disable that one and create your own more specific rules. Rules can be accessed from two locations: . console.aws.amazon.com/cloudwatch/home . Or here: . console.aws.amazon.com/events/home . On either page you should click on the ‘Create rule’ button. Under Define pattern, select Event pattern, then select Pre-defined pattern by service, select ‘AWS’, then select ‘All Services’. This will behave in the same way as CloudTrail, by passing all AWS events to the target. Next, under Select targets ensure the target is set to ‘Lambda function’, and then select the function id for the one you uploaded. It will be in the format: AWS-Events2Panther-{stack name} . Once done, you can click on the Create button at the bottom of the page. ",
     "url": "https://openanswers.github.io/panther-docs/guides/aws-events-in-detail#32-setting-up-event-triggers-in-the-aws-console",
     "relUrl": "/guides/aws-events-in-detail#32-setting-up-event-triggers-in-the-aws-console"
   },"19": {
@@ -661,7 +661,7 @@
   },"110": {
     "doc": "AWS events",
     "title": "Running",
-    "content": "Once the code has been successfully registered in AWS you should start seeing a stream of events into Panther. Manual testing can be done following the AWS Events testing instructions . ",
+    "content": "Once the code has been successfully registered in AWS you should start seeing a stream of events into Panther. Manual testing can be done following the AWS Events testing instructions. Further event filtering check Configuring the captured events . ",
     "url": "https://openanswers.github.io/panther-docs/guides/aws-events#running",
     "relUrl": "/guides/aws-events#running"
   },"111": {
@@ -751,7 +751,7 @@
   },"125": {
     "doc": "AWS events (quickstart)",
     "title": "Build and Deploy to AWS",
-    "content": "You will be prompted for the following . | APIToken | Panther [HTTP API Key](/panther-docs/panther/admin#ap-keys) this will be a long 32 character string of random letters and numbers | . | ConsoleFQDN | The fully qualified name of your Panther console e.g. [example.app.panther.support](https://app.panther.support) or self hosted hostname | . From a git clone of panther-aws-events . | sam build sam deploy --guided . | . For more information on setting up the AWS command line utilities, please refer to the Detailed guide. Further instructions for how to send some test events to Panther are in the AWS events testing . ",
+    "content": "During the deployment you will be prompted for the following values: . | APIToken | Panther [HTTP API Key](/panther-docs/panther/admin#ap-keys) this will be a long 32 character string of random letters and numbers | . | ConsoleFQDN | The fully qualified name of your Panther console e.g. [example.app.panther.support](https://app.panther.support) or self hosted hostname | . From a git clone of panther-aws-events the following commands will deploy panther-aws-events. | sam build sam deploy --guided . | . For more information on setting up the AWS command line utilities, please refer to the Detailed guide. Further instructions for how to send some test events to Panther are on the AWS events testing page. ",
     "url": "https://openanswers.github.io/panther-docs/guides/aws-events-quickstart#build-and-deploy-to-aws",
     "relUrl": "/guides/aws-events-quickstart#build-and-deploy-to-aws"
   },"126": {
