@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Sending events to Panther
+title: Sending Events to Panther
 nav_order: 3
 permalink: /panther/config
 layout: template
