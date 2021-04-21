@@ -2263,6 +2263,7 @@ figure.highlight pre, figure.highlight code { padding: 0; margin: 0; border: 0; 
 @media (min-width: 50rem) { .main { position: relative; max-width: 850px; margin-left: 248px; } }
 @media (min-width: 66.5rem) { .main { margin-left: calc( (100% - 1130px) / 4 + 280px ); margin-right: 300px; } }
 .main #main-header { position: sticky; top: 0px; z-index: 3; }
+.main #main-content h1, .main #main-content h2, .main #main-content h3, .main #main-content h4, .main #main-content h5 { scroll-margin-top: 80px; }
 
 .search-input { font-size: 18px; color: #ddd; background: linear-gradient(#ddd, #000) center bottom 5px/calc(100% - 50px) 2px no-repeat; }
 

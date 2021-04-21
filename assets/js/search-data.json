@@ -391,7 +391,7 @@
   },"65": {
     "doc": "Getting Started",
     "title": "Event Source Examples",
-    "content": "The freely available software packages listed below can act as event sources for Panther. | Software | Official Website | Panther Configuration | . | ![NXLog](/panther-docs/panther/getting-started/media/nxlog-logo.png){:height=\"30px\" width=\"80px\"} | [Documentation](https://nxlog.co/documentation) | [Linux](../config#nxlog-linux), [Windows](../config#nxlog-windows) | . | ![Rsyslog](/panther-docs/panther/getting-started/media/rsyslog-logo.png){:height=\"30px\" width=\"80px\"} | [Documentation](https://www.rsyslog.com/doc/master/index.html) | [Linux](../config#rsyslog-linux) | . | Syslog-ng | TODO | TODO | . | Log4j | TODO | TODO | . | Log4Net | TODO | TODO | . Examples of approaches that can be used to monitor infrastructure and applications. | Technology | How | . | Linux | TODO | . | Windows | TODO | . | Cisco | TODO | . | MuleSoft Anypoint Platform | TODO | . | Dell Boomi | TODO | . ",
+    "content": "The freely available software packages listed below can act as event sources for Panther. | Software | Official Website | Panther Configuration | . | ![NXLog](/panther-docs/panther/getting-started/media/nxlog-logo.png){:height=\"30px\" width=\"80px\"} | [Documentation](https://nxlog.co/documentation){:target=\"_blank\"} | [Linux](../config#nxlog-linux), [Windows](../config#nxlog-windows) | . | ![Rsyslog](/panther-docs/panther/getting-started/media/rsyslog-logo.png){:height=\"30px\" width=\"80px\"} | [Documentation](https://www.rsyslog.com/doc/master/index.html){:target=\"_blank\"} | [Linux](../config#rsyslog-linux) | . | Syslog-ng | TODO | TODO | . | Log4j | TODO | TODO | . | Log4Net | TODO | TODO | . Examples of approaches that can be used to monitor infrastructure and applications. | Technology | How | . | Linux | TODO | . | Windows | TODO | . | Cisco | TODO | . | MuleSoft Anypoint Platform | TODO | . | Dell Boomi | TODO | . ",
     "url": "https://vinceoa.github.io/panther-docs/panther/getting-started#event-source-examples",
     "relUrl": "/panther/getting-started#event-source-examples"
   },"66": {
@@ -637,7 +637,7 @@
   },"106": {
     "doc": "AWS events",
     "title": "Checklist",
-    "content": "In order to send events from your AWS estate to Panther you will need to have the following: . | APIToken | Panther [HTTP API Key](/panther-docs/panther/admin#ap-keys) this will be a long 32 character string of random letters and numbers | . | ConsoleFQDN | The fully qualified name of your Panther console e.g. [example.app.panther.support](https://app.panther.support) or self hosted hostname | . ",
+    "content": "In order to send events from your AWS estate to Panther you will need to have the following: . | APIToken | Panther [HTTP API Key](/panther-docs/panther/admin#ap-keys) this will be a long 32 character string of random letters and numbers | . | ConsoleFQDN | The fully qualified name of your Panther console e.g. [example.app.panther.support](https://app.panther.support){:target=\"_blank\"} or self hosted hostname | . ",
     "url": "https://vinceoa.github.io/panther-docs/guides/aws-events#checklist",
     "relUrl": "/guides/aws-events#checklist"
   },"107": {
@@ -751,7 +751,7 @@
   },"125": {
     "doc": "AWS events (quickstart)",
     "title": "Build and Deploy to AWS",
-    "content": "During the deployment you will be prompted for the following values: . | APIToken | Panther [HTTP API Key](/panther-docs/panther/admin#ap-keys) this will be a long 32 character string of random letters and numbers | . | ConsoleFQDN | The fully qualified name of your Panther console e.g. [example.app.panther.support](https://app.panther.support) or self hosted hostname | . From a git clone of panther-aws-events the following commands will deploy panther-aws-events. | sam build sam deploy --guided . | . For more information on setting up the AWS command line utilities, please refer to the Detailed guide. Further instructions for how to send some test events to Panther are on the AWS events testing page. ",
+    "content": "During the deployment you will be prompted for the following values: . | APIToken | Panther [HTTP API Key](/panther-docs/panther/admin#ap-keys) this will be a long 32 character string of random letters and numbers | . | ConsoleFQDN | The fully qualified name of your Panther console e.g. [example.app.panther.support](https://app.panther.support){:target=\"_blank\"} or self hosted hostname | . From a git clone of panther-aws-events the following commands will deploy panther-aws-events. | sam build sam deploy --guided . | . For more information on setting up the AWS command line utilities, please refer to the Detailed guide. Further instructions for how to send some test events to Panther are on the AWS events testing page. ",
     "url": "https://vinceoa.github.io/panther-docs/guides/aws-events-quickstart#build-and-deploy-to-aws",
     "relUrl": "/guides/aws-events-quickstart#build-and-deploy-to-aws"
   },"126": {
