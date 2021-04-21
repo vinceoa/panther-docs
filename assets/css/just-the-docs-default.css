@@ -140,10 +140,10 @@ hr { height: 1px; padding: 0; margin: 2rem 0; background-color: #44434d; border:
 
 .side-bar { z-index: 0; display: flex; flex-wrap: wrap; background-color: #333; }
 @media (min-width: 50rem) { .side-bar { flex-wrap: nowrap; position: fixed; width: 248px; height: 100%; flex-direction: column; border-right: 1px solid #44434d; align-items: flex-end; } }
-@media (min-width: 66.5rem) { .side-bar { width: calc((100% - 1110px) / 2 + 260px); min-width: 260px; } }
+@media (min-width: 66.5rem) { .side-bar { width: calc((100% - 1130px) / 2 + 280px); min-width: 280px; } }
 
 @media (min-width: 50rem) { .main { position: relative; max-width: 850px; margin-left: 248px; } }
-@media (min-width: 66.5rem) { .main { margin-left: calc( (100% - 1110px) / 2 + 260px ); } }
+@media (min-width: 66.5rem) { .main { margin-left: calc( (100% - 1130px) / 2 + 280px ); } }
 
 .main-content-wrap { padding-right: 1rem; padding-left: 1rem; padding-top: 1rem; padding-bottom: 1rem; }
 @media (min-width: 50rem) { .main-content-wrap { padding-right: 2rem; padding-left: 2rem; } }
@@ -155,7 +155,7 @@ hr { height: 1px; padding: 0; margin: 2rem 0; background-color: #44434d; border:
 @media (min-width: 50rem) { .main-header.nav-open { display: flex; } }
 
 .site-nav, .site-header, .site-footer { width: 100%; }
-@media (min-width: 66.5rem) { .site-nav, .site-header, .site-footer { width: 260px; } }
+@media (min-width: 66.5rem) { .site-nav, .site-header, .site-footer { width: 280px; } }
 
 .site-nav { display: none; }
 .site-nav.nav-open { display: block; }
@@ -2256,12 +2256,12 @@ figure.highlight pre, figure.highlight code { padding: 0; margin: 0; border: 0; 
 
 .side-bar { z-index: 0; display: flex; flex-wrap: wrap; background-color: #333; }
 @media (min-width: 50rem) { .side-bar { flex-wrap: nowrap; position: fixed; width: 248px; height: 100%; flex-direction: column; border-right: 1px solid #44434d; align-items: flex-end; } }
-@media (min-width: 66.5rem) { .side-bar { width: calc((100% - 1110px) / 4 + 260px); min-width: 260px; } }
+@media (min-width: 66.5rem) { .side-bar { width: calc((100% - 1130px) / 4 + 280px); min-width: 280px; } }
 .side-bar .site-title { padding: 0px; padding-right: 0.2rem; }
 
 .main footer { background-color: #444; color: white a; color-color: whitesmoke; }
 @media (min-width: 50rem) { .main { position: relative; max-width: 850px; margin-left: 248px; } }
-@media (min-width: 66.5rem) { .main { margin-left: calc( (100% - 1110px) / 4 + 260px ); margin-right: 300px; } }
+@media (min-width: 66.5rem) { .main { margin-left: calc( (100% - 1130px) / 4 + 280px ); margin-right: 300px; } }
 .main #main-header { position: sticky; top: 0px; z-index: 3; }
 
 .search-input { font-size: 18px; color: #ddd; background: linear-gradient(#ddd, #000) center bottom 5px/calc(100% - 50px) 2px no-repeat; }

@@ -455,92 +455,92 @@
     "url": "https://vinceoa.github.io/panther-docs/panther/rules",
     "relUrl": "/panther/rules"
   },"76": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "Overview",
     "content": "The most straightforward way to send events to Panther is to install and configure compatible logging software on the client system. While users should generally install the software according to the documentation published by the relevant providers, specific configuration is also required to enable communication with Panther. This page provides a guide to the configuration required once the logging software has been installed. (Please note that the instructions here are based on clean installations of the logging software – if site-specific configurations have already been made, then it is necessary to download the Panther resources and integrate them following the providers’ documentation.) . All users should read the general advice in the introduction, but then refer to the relevant sections for their own specific software. | Introduction (all systems) | Download configuration archive (all systems) | Rsyslog (linux) | NXLog (linux) | NXLog (windows) | . ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#overview",
     "relUrl": "/panther/config#overview"
   },"77": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "Introduction",
     "content": "Event data is sent securely to the Panther server from local clients via an encrypted connection using Transport Layer Security (TLS). This requires the use of certificates and unique client keys which are generated specifically for your Panther instance during the sign-up process. Since these certificates and keys are needed to configure client event loggers, they are bundled into “configuration archives” along with sample configuration files specific to the software, and made available for download by Panther. You should ensure that the client.key included in your configuration archive is kept securely to prevent its use by anyone else. The configuration process therefore is to download an appropriate archive, to load it in a suitable location for the software, and to carry out any remaining package or system specific tasks. ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#introduction",
     "relUrl": "/panther/config#introduction"
   },"78": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "Downloading Configuration Archive",
     "content": "The configuration archives are available on the Admin page. Select this using the tab from the main menu at the top of the Panther page. The drop-down selector offers archives for the supported software and operating systems. Select the appropriate option for your client and click the Download button. The archives are downloaded in an appropriate format for each system: Linux archives are provided in uncompressed tar format, while Windows archives are built using zip. (Note that the same certificates and keys are provided in each archive, so for custom configurations the choice of download is unimportant.) . ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#downloading-configuration-archive",
     "relUrl": "/panther/config#downloading-configuration-archive"
   },"79": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "Rsyslog Configuration",
     "content": "For complete information on configuring rsyslog, please consult the official guides for rsyslog. Major distributions include rsyslog in their standard repositories, so please either follow your system’s guidelines to install and enable it, or visit the official website. Once rsyslog is installed, the necessary steps to integrate it with Panther are: . | install supporting gnutls packages | install configuration files | restart rsyslog | . ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#rsyslog-configuration",
     "relUrl": "/panther/config#rsyslog-configuration"
   },"80": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "Install GNU-TLS support for rsyslog",
     "content": "On GNU/Linux systems, rsyslog uses the GnuTLS library to provide its TLS functionality. This is classed as an optional dependency on some distributions, and is therefore not always installed automatically by the package manager. Where this is the case, the TLS package may have to be added explicitly along with the main rsyslog package. Debian / Ubuntu . # apt-get install rsyslog-gnutls . RedHat / CentOS . # yum install rsyslog-gnutls . ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#install-gnu-tls-support-for-rsyslog",
     "relUrl": "/panther/config#install-gnu-tls-support-for-rsyslog"
   },"81": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "Install the configuration files",
     "content": "The downloaded resources in rsyslog-config-linux.tar need to be installed into the system rsyslog configuration directory. The following commands will extract the archive into /etc/rsyslog-client.d, creating it if necessary. If the directory already exists, then make a backup of it before extracting the archive in case any previously configured files are overwritten. [root@localhost ~]# cd /etc [root@localhost /etc]# tar -xvf /path/to/rsyslog-config-linux.tar . ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#install-the-configuration-files",
     "relUrl": "/panther/config#install-the-configuration-files"
   },"82": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "Edit the main rsyslog configuration",
     "content": "Once the new configuration files have been installed, the main system rsyslog configuration file must be updated in order to reference them. Edit /etc/rsyslog.conf and make sure that it contains a line like this to read the Panther configuration files extracted from the archive above: . $IncludeConfig /etc/rsyslog-client.d/*.conf . ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#edit-the-main-rsyslog-configuration",
     "relUrl": "/panther/config#edit-the-main-rsyslog-configuration"
   },"83": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "Restart rsyslog",
     "content": "The new configuration should take effect automatically when the system is next rebooted, but it is also possible to restart rsyslog to have the changes take effect immediately. systemd based systems . Systems using the newer systemd service manager, such as Ubuntu 18 and CentOS 7, can restart the rsyslog service as follows: . # systemctl restart rsyslog . init.d based systems . Systems using the older System V init service management scripts can generally restart the rsyslog service as follows: . # /etc/init.d/rsyslog restart . ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#restart-rsyslog",
     "relUrl": "/panther/config#restart-rsyslog"
   },"84": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "NXLog Configuration (Linux)",
     "content": "Install the NXLog Community Edition from the official website following the deployment guide. Once installed, the steps to integrate NXLog with Panther are: . | install configuration files | restart nxlog | . ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#nxlog-configuration-linux",
     "relUrl": "/panther/config#nxlog-configuration-linux"
   },"85": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "Install the configuration files",
     "content": "To begin with, download the configuration archive as described above. The downloaded resources in nxlog-config-linux.tar then need to be installed into the system NXLog configuration directory. The following commands will extract the archive into /etc/nxlog, which should have been created during the NXLog installation. Note that any existing nxlog.conf will be overwritten, so make a backup if one already exists. [root@localhost ~]# cd /etc/nxlog [root@localhost /etc/nxlog]# tar -xvf /path/to/nxlog-config-linux.tar . Apart from overwriting the main nxlog.conf, this will extract the required certificates and key files into a new panther sub-directory. ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#install-the-configuration-files-1",
     "relUrl": "/panther/config#install-the-configuration-files-1"
   },"86": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "Restart NXLog",
     "content": "If NXLog has been installed according to the deployment guide, then it should restart automatically following a system reboot. In order to have the new configuration take immediate effect, it is also possible to restart NXLog immediately. While systemd systems such as Ubuntu and CentOS are supported, at the time of writing the service management interface for NXLog is implemented as a wrapper around the System V init scripts. This means that, on both systemd and init based systems, it is possible to restart NXLog by calling the init script directly: . [root@localhost /etc/nxlog]# /etc/init.d/nxlog restart . ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#restart-nxlog",
     "relUrl": "/panther/config#restart-nxlog"
   },"87": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "NXLog Configuration (Windows)",
     "content": "Download the Windows installer for the NXLog Community Edition from the official website. Install the package by running the installer, but also see the deployment guide. Once installed, the steps to integrate NXLog with Panther are: . | install configuration files | restart nxlog | . ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#nxlog-configuration-windows",
     "relUrl": "/panther/config#nxlog-configuration-windows"
   },"88": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "Install the configuration files",
     "content": "Once the Windows configuration archive has been downloaded as described above, the contents of nxlog-config-windows.zip must be overlaid onto the base directory of the installed NXLog package. If the default install options were used, this will normally be C:\\Program Files (x86)\\nxlog. Opening this directory with the Windows File Explorer will show that it contains cert and conf sub-directories, among others. While the cert directory should be empty, the conf directory may contain a sample nxlog.conf, which should be renamed nxlog.dist in order to prevent any clash with the new configuration. Extract the downloaded nxlog-config-windows.zip Panther configuration archive by clicking on it and selecting the extract to option, specifying the base directory NXLog was installed into – normally C:\\Program Files\\nxlog – containing the cert and conf sub-directories. This will copy the certificates and key files into the empty cert directory, along with a new nxlog.conf into the conf directory. Note that the system may ask for confirmation when writing to the cert directory, owing to its permissions. ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#install-the-configuration-files-2",
     "relUrl": "/panther/config#install-the-configuration-files-2"
   },"89": {
-    "doc": "Client Configuration",
+    "doc": "Sending Events to Panther",
     "title": "Restart NXLog",
     "content": "The NXLog installer should have configured the service to be started automatically on the next system boot. From the NXLog documentation, it is also possible to start the service directly from the services console, or from the command line interface by navigating to the install directory and running nxlog.exe -f. This last option may assist in initial debugging. ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config#restart-nxlog-1",
     "relUrl": "/panther/config#restart-nxlog-1"
   },"90": {
-    "doc": "Client Configuration",
-    "title": "Client Configuration",
+    "doc": "Sending Events to Panther",
+    "title": "Sending Events to Panther",
     "content": " ",
     "url": "https://vinceoa.github.io/panther-docs/panther/config",
     "relUrl": "/panther/config"
