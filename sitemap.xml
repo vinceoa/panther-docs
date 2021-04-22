@@ -16,12 +16,6 @@
 <loc>https://vinceoa.github.io/panther-docs/panther/rules/group</loc>
 </url>
 <url>
-<loc>https://vinceoa.github.io/panther-docs/panther/sending-events/aws-events-detail</loc>
-</url>
-<url>
-<loc>https://vinceoa.github.io/panther-docs/guides</loc>
-</url>
-<url>
 <loc>https://vinceoa.github.io/panther-docs/panther/console</loc>
 </url>
 <url>
@@ -32,9 +26,6 @@
 </url>
 <url>
 <loc>https://vinceoa.github.io/panther-docs/panther/dashboard</loc>
-</url>
-<url>
-<loc>https://vinceoa.github.io/panther-docs/panther/sending-events/aws-events</loc>
 </url>
 <url>
 <loc>https://vinceoa.github.io/panther-docs/panther/sending-events</loc>
@@ -64,9 +55,6 @@
 <loc>https://vinceoa.github.io/panther-docs/panther/sending-events/panther-api</loc>
 </url>
 <url>
-<loc>https://vinceoa.github.io/panther-docs/panther/sending-events/aws-events-quickstart</loc>
-</url>
-<url>
 <loc>https://vinceoa.github.io/panther-docs/panther/sending-events/rsyslog</loc>
 </url>
 <url>
@@ -80,9 +68,6 @@
 </url>
 <url>
 <loc>https://vinceoa.github.io/panther-docs/panther/console/shortcuts</loc>
-</url>
-<url>
-<loc>https://vinceoa.github.io/panther-docs/panther/sending-events/aws-events-testing</loc>
 </url>
 <url>
 <loc>https://vinceoa.github.io/panther-docs/panther/rules/yaml</loc>
