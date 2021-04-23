@@ -2276,3 +2276,23 @@ figure.highlight pre, figure.highlight code { padding: 0; margin: 0; border: 0; 
 
 .breadcrumb-nav-list-item { display: table-cell; font-size: 12px !important; }
 @media (min-width: 31.25rem) { .breadcrumb-nav-list-item { font-size: 14px !important; } }
+
+div.highlighter-rouge { background-color: #111; }
+
+code { font-size: 0.8em; }
+
+.highlight .s { color: #56a2e0 !important; }
+
+/* Literal.String */
+.highlight .na { color: #1e90ff !important; }
+
+/* Name.Attribute */
+.highlight .no { color: #08e4e4 !important; }
+
+/* Name.Constant */
+.highlight .nl, .gp { color: #ffffff !important; }
+
+/* Name.Label */
+.highlight .s2 { color: #6fb9f5 !important; }
+
+/* Literal.String.Double */
