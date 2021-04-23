@@ -2281,16 +2281,19 @@ div.highlighter-rouge { background-color: #111; }
 
 code { font-size: 0.8em; }
 
-.highlight .s { color: #56a2e0 !important; }
+.highlight .s { color: #66baff !important; }
 
 /* Literal.String */
-.highlight .na { color: #1e90ff !important; }
+.highlight .na { color: #0783ff !important; }
 
 /* Name.Attribute */
 .highlight .no { color: #08e4e4 !important; }
 
 /* Name.Constant */
 .highlight .nl, .gp { color: #ffffff !important; }
+
+/* Name.Label */
+.highlight .nx { color: #eeeeee !important; }
 
 /* Name.Label */
 .highlight .s2 { color: #6fb9f5 !important; }
