@@ -697,7 +697,7 @@
   },"116": {
     "doc": "NXLog",
     "title": "Download Linux Configuration Archive",
-    "content": "TODO . ",
+    "content": "The configuration archives are available on the Admin page. Select this using the tab from the main menu at the top of the Panther page. The drop-down selector offers archives for the supported software and operating systems. Select the appropriate option for your client and click the Download button. The archives are downloaded in an appropriate format for each system: . | Linux archives are provided in uncompressed tar format, while | Windows archives are built using zip. | . Note: that the same certificates and keys are provided in each archive, so for custom configurations the choice of download is unimportant. ",
     "url": "https://vinceoa.github.io/panther-docs/panther/sending-events/nxlog#download-linux-configuration-archive",
     "relUrl": "/panther/sending-events/nxlog#download-linux-configuration-archive"
   },"117": {
@@ -763,7 +763,7 @@
   },"127": {
     "doc": "Rsyslog",
     "title": "Downloading Configuration Archive",
-    "content": "The configuration archives are available on the Admin page. Select this using the tab from the main menu at the top of the Panther page. The drop-down selector offers archives for the supported software and operating systems. Select the appropriate option for your client and click the Download button. The archives are downloaded in an appropriate format for each system: . | Linux archives are provided in uncompressed tar format, while | Windows archives are built using zip. | . (Note that the same certificates and keys are provided in each archive, so for custom configurations the choice of download is unimportant.) . ",
+    "content": "The configuration archives are available on the Admin page. Select this using the tab from the main menu at the top of the Panther page. The drop-down selector offers archives for the supported software and operating systems. Select the appropriate option for your client and click the Download button. The archives are downloaded in an appropriate format for each system: . | Linux archives are provided in uncompressed tar format, while | Windows archives are built using zip. | . Note: that the same certificates and keys are provided in each archive, so for custom configurations the choice of download is unimportant. ",
     "url": "https://vinceoa.github.io/panther-docs/panther/sending-events/rsyslog#downloading-configuration-archive",
     "relUrl": "/panther/sending-events/rsyslog#downloading-configuration-archive"
   },"128": {
