@@ -67,15 +67,15 @@
   },"11": {
     "doc": "AWS Events",
     "title": "Step-by-step",
-    "content": "The panther-aws-events project is built and deployed to AWS using the Serverless Application Model (SAM): . docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html . Therefore, to easily build and deploy the Lambda function code to AWS, you must first install SAM. NOTE: The AWS SAM tool requires that you have setup the AWS CLI tools first, and that you can use them to access your account: docs.aws.amazon.com/cli/index.html . ",
+    "content": "The panther-aws-events project is built and deployed to AWS using the Serverless Application Model (SAM): . docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html . Therefore, to easily build and deploy the Lambda function code to AWS, you must first install SAM. NOTE: The AWS SAM tool requires that you have first setup the AWS CLI tools, and that you can use them to access your account. Amazon/AWS setup instructions will guide you through this process docs.aws.amazon.com/cli/index.html . ",
     "url": "https://vinceoa.github.io/panther-docs/panther/sending-events/aws#step-by-step",
     "relUrl": "/panther/sending-events/aws#step-by-step"
   },"12": {
     "doc": "AWS Events",
-    "title": "Installing SAM on Linux (simple)",
+    "title": "Installing SAM on Linux",
     "content": "To install SAM on Linux, you can use the Python 3 installer version: . pip3 install aws-sam-cli . The official Amazon SAM install guide covers Windows, macOS and Linux and is slightly more involved. ",
-    "url": "https://vinceoa.github.io/panther-docs/panther/sending-events/aws#installing-sam-on-linux-simple",
-    "relUrl": "/panther/sending-events/aws#installing-sam-on-linux-simple"
+    "url": "https://vinceoa.github.io/panther-docs/panther/sending-events/aws#installing-sam-on-linux",
+    "relUrl": "/panther/sending-events/aws#installing-sam-on-linux"
   },"13": {
     "doc": "AWS Events",
     "title": "Checklist",
