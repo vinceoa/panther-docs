@@ -1,22 +1,26 @@
 ---
 layout: home
-title: Rules file (yaml)
+title: Rules file (YAML)
 nav_order: 6
 permalink: /panther/rules/yaml
 parent: Rules
 layout: template
-description: Panther Rules - yaml definitions
+description: Panther Rules - YAML definitions
 ---
 
 # Rules location
 Depending on which way you installed Panther there are differing locations of the rule files.
 
-## When using [docker-compose.yml](https://github.com/OpenAnswers/panther-core/blob/master/docker-compose.yml)
-  A docker volume will have been created, the name is comprised of two parts.
+## When using [app.panther.support](https://app.panther.support){:target="_blank"}
+  The rules are not directly accessible to the end user but they can be exported, edited and re-imported from `Rules` tab.
+
+
+## When using [docker-compose.yml](https://github.com/OpenAnswers/panther-core/blob/master/docker-compose.yml){:target="_blank"}
+  A Docker volume will have been created, the name is comprised of two parts.
   
   `<directory-name>_rules_vol`
 
-  For example if your `docker-compose.yml` is in a directory called `panther` then the docker volume will be called
+  For example if your `docker-compose.yml` is in a directory called `panther` then the Docker volume will be called
   `panther_rules-vol`
 
   e.g.
@@ -28,10 +32,8 @@ Depending on which way you installed Panther there are differing locations of th
   -rw-r--r-- 1 ansible ansible 2256 Jul  7  2020 syslogd.rules.yml
   ```
 
-## When using [app.panther.support](https://app.panther.support)
-  The rules are not directly accessible to the end user.
 
-## When running the [source code](https://github.com/OpenAnswers/panther-core) 
+## When running the [source code](https://github.com/OpenAnswers/panther-core){:target="_blank"}
   The rules are located under `rules/`
 
   e.g.

@@ -9,25 +9,25 @@ description: Getting started with Panther
 
 
 # Introduction
-The (beta) cloud-based version of Panther is accessible at [app.panther.support](//app.panther.support). After a simple Sign-up process your dedicated secure Panther instance will be automatically provisioned within the Panther Cloud. When signing-up you will be asked to choose a unique name for your Console which will then be accessible at https://{**your-console-name**}.[app.panther.support](//app.panther.support).
+The (beta) cloud-based version of Panther is accessible at [app.panther.support](//app.panther.support){:target="_blank"}. After a simple Sign-up process your dedicated secure Panther instance will be automatically provisioned within the Panther Cloud. When signing-up you will be asked to choose a unique name for your Console which will then be accessible at https://{**example**}.[app.panther.support](//app.panther.support){:target="_blank"}.
 
 ![Panther Architecture diagram](../../img/PantherArchitecture.png)
 
 ## Using Panther for the First Time
 
-### Logging in (SaaS)
-Login for the first time as the `admin` user using the password you gave during Sign-up - this is the default user account that will be used to [administer](../admin/index.md) Panther for the first time.
+### Logging in (app.panther.support)
+Login for the first time as the `admin` user using the password you gave during Sign-up - this is the default user account that will be used to [administer](../admin/index.md) Panther for the first time.  Additional users can then be created from the [admin tab](../admin/index.md#user-administration).
 
 ### Logging in (`docker-compose.yml`)
 
-**Note** Instructions for launching the Docker images are on [github.com/openanswers/panther-core](https://github.com/OpenAnswers/panther-core)
+**Note** Instructions for launching the Docker images are on [github.com/openanswers/panther-core](https://github.com/OpenAnswers/panther-core){:target="_blank"}
 
 After starting the Panther containers for the first time an initial password will have been set. Unless configured that defaults will be:
 
 | Username | `admin` |
 | Password | `admin`|
 
-This can be changed through the `environment` settings in [`docker-compose.yml`](https://github.com/OpenAnswers/panther-core/blob/master/docker-compose.yml) e.g.
+This can be changed through the `environment` settings in [`docker-compose.yml`](https://github.com/OpenAnswers/panther-core/blob/master/docker-compose.yml){:target="_blank"} e.g.
 
 ```yaml
   event-console:
@@ -51,7 +51,7 @@ Clicking on `Open Console` will take you to the [Console](../console/index.md#ov
 ... this example shows that the Panther instance currently has two events in it. These particular messages are coming from the instance's _internal_ `syslogd` and `http` agents which will send periodic "keep-alive" events to indicate that they are healthy. Here, `Agent http is alive` and `Agent syslogd` are the details of the event, contained within the `summary` field (see next section). Double-click on an event to explore it a bit more.
 
 ## Anatomy of an Event
-A Panther Event is comprised of a number of data fields that are analagous to [The Syslog Protocol](https://tools.ietf.org/html/rfc5424).
+A Panther Event is comprised of a number of data fields that are analagous to [The Syslog Protocol](https://tools.ietf.org/html/rfc5424){:target="_blank"}.
 
 | Field            | Meaning                                                         | Example value                                                                     |
 | ---------------- | --------------------------------------------------------------- | --------------------------------------------------------------------------------- |
@@ -64,7 +64,7 @@ A Panther Event is comprised of a number of data fields that are analagous to [T
 | group            | Grouping applied to this event (determined by Group Rules)      | `Windows Servers`                                                                 |
 | identifier       | Unique identifier for this event (used for de-duplication)      | `10740737389554512696`                                                            |
 | node             | Hostname of the device/server that originated the event         | `MYWINSERVER123`                                                                  |
-| owner            | The panther user that has taken ownership of this event         | `dave`                                                                            |
+| owner            | The Panther user that has taken ownership of this event         | `dave`                                                                            |
 | severity         | Event Severity (0-5)                                            | `5` _(Warning)_                                                                   |
 | state_change     | Date/time when the last change to the event occurred            | `2019-10-04T12:22:49.066Z`                                                        |
 | summary          | Event details                                                   | `ERROR_OUTOFMEMORY: Not enough storage` `is available to complete this operation` |
@@ -118,13 +118,14 @@ More details on this are available in [the API section](../api/index.md).
 The freely available software packages listed below can act as event
 sources for Panther.
 
-| Software                                                          | Official Website                                               | Panther Configuration                                              |
-| ----------------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------ |
-| ![NXLog](./media/nxlog-logo.png){:height="30px" width="80px"}     | [Documentation](https://nxlog.co/documentation)                | [Linux](../config#nxlog-linux), [Windows](../config#nxlog-windows) |
-| ![Rsyslog](./media/rsyslog-logo.png){:height="30px" width="80px"} | [Documentation](https://www.rsyslog.com/doc/master/index.html) | [Linux](../config#rsyslog-linux)                                   |
-| Syslog-ng                                                         | TODO                                                           | TODO                                                               |
-| Log4j                                                             | TODO                                                           | TODO                                                               |
-| Log4Net                                                           | TODO                                                           | TODO                                                               |
+| Software                                                          | Official Website                                                                 | Panther Configuration                                                                                                            |
+| ----------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| ![NXLog](./media/nxlog-logo.png){:height="30px" width="80px"}     | [Documentation](https://nxlog.co/documentation){:target="_blank"}                | [Linux](../sending-events/nxlog.md#nxlog-configuration-linux), [Windows](../sending-events/nxlog.md#nxlog-configuration-windows) |
+| ![Rsyslog](./media/rsyslog-logo.png){:height="30px" width="80px"} | [Documentation](https://www.rsyslog.com/doc/master/index.html){:target="_blank"} | [Linux](../sending-events/rsyslog.md#rsyslog-configuration)                                                                      |
+| Syslog-ng                                                         | TODO                                                                             | TODO                                                                                                                             |
+| Log4j                                                             | TODO                                                                             | TODO                                                                                                                             |
+| Log4Net                                                           | TODO                                                                             | TODO                                                                                                                             |
+| ![AWS](../../img/aws-white.png){:height="30px"}                   | TODO                                                                             | [Linux](../sending-events/aws.md)                                                                                                |
 
 Examples of approaches that can be used to monitor infrastructure and applications.
 
