@@ -74,14 +74,14 @@ Currently supported fields are
 
 | Field                                     | Example                  |
 | ----------------------------------------- | ------------------------ |
-| `prival`                                  | 148                      |
-| `facilityID`                              | 18                       |
-| `severityID`                              | 4                        |
+| `prival`                                  | `<PRIVAL>`               |
+| `facilityID`                              |                          |
+| `severityID`                              |                          |
 | `facility`                                | local2                   |
 | `severity`                                | warn                     |
 | `type`                                    | `RFC5424`, `RFC3164`     |
 | `time`                                    | 2022-07-04T16:24:41.786Z |
-| `host`                                    | my-laptop                |
+| `host`                                    | localhost                |
 | `appName`                                 | sshd                     |
 | `message`                                 | User authentication      |
 | `msgid`                                   | `<MSGID>`                |
@@ -90,6 +90,36 @@ Currently supported fields are
 | `structuredData.timeQuality.isSynced`     | 1                        |
 | `structuredData.timeQuality.syncAccuracy` | 531000                   |
 | `structuredData.<SD-ID>.<PARAM-NAME>`     | `<PARAM-VALUE>`          |
+
+**Example of sending an RFC5424 message**
+
+```bash
+logger -p local2.warn -n localhost -T -P 1514 --rfc5424 -t sshd --msgid 1234 --id=44 --sd-id test@123 --sd-param foo=\"bar\" --sd-id more@456 --sd-param fiz=\"baz\" hello world
+```
+
+Would make the following fields and values accessible with the Syslog rules:
+
+| Field                                     | Value                    |
+| ----------------------------------------- | ------------------------ |
+| `prival`                                  | 148                      |
+| `facilityID`                              | 18                       |
+| `severityID`                              | 4                        |
+| `facility`                                | local2                   |
+| `severity`                                | warn                     |
+| `type`                                    | `RFC5424`                |
+| `time`                                    | 2022-07-04T16:24:41.786Z |
+| `host`                                    | localhost                |
+| `appName`                                 | sshd                     |
+| `message`                                 | hello world              |
+| `msgid`                                   | 1234                     |
+| `pid`                                     | 44                       |
+| `structuredData.timeQuality.tzKnown`      | 1                        |
+| `structuredData.timeQuality.isSynced`     | 1                        |
+| `structuredData.timeQuality.syncAccuracy` | 531000                   |
+| `structuredData.test@123.foo`             | bar                      |
+| `structuredData.more@456.fiz`             | baz                      |
+
+
 
 
 ## Severity Mapping
