@@ -70,6 +70,27 @@ Currently supported transformations are
 Syslog message fields need to be mapped to event console fields. These fields
 will then be available for matching in rules processing.
 
+Currently supported fields are
+
+| Field                                     | Example                  |
+| ----------------------------------------- | ------------------------ |
+| `prival`                                  | 148                      |
+| `facilityID`                              | 18                       |
+| `severityID`                              | 4                        |
+| `facility`                                | local2                   |
+| `severity`                                | warn                     |
+| `type`                                    | `RFC5424`, `RFC3164`     |
+| `time`                                    | 2022-07-04T16:24:41.786Z |
+| `host`                                    | my-laptop                |
+| `appName`                                 | sshd                     |
+| `message`                                 | User authentication      |
+| `msgid`                                   | `<MSGID>`                |
+| `pid`                                     | `<PROCID>`               |
+| `structuredData.timeQuality.tzKnown`      | 1                        |
+| `structuredData.timeQuality.isSynced`     | 1                        |
+| `structuredData.timeQuality.syncAccuracy` | 531000                   |
+| `structuredData.<SD-ID>.<PARAM-NAME>`     | `<PARAM-VALUE>`          |
+
 
 ## Severity Mapping
 
