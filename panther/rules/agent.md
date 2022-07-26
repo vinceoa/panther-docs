@@ -217,8 +217,7 @@ Given the following JSON payload:
   "event" {
     "node": "hostname", "tag": "some string", "summary": "what the event pertains too", "severity": 3,
     "extra1": "An additional extra field",
-    "extra2": "Another additional field",
-    "extra3": "Another additional field"
+    "extra2": "Agent Smith",
   }
 }
 ```
@@ -233,5 +232,6 @@ agent:
         - "extra1"
       set:
         summary: '{summary} + {extra1}'
+        agent: '{extra2}'
 
 ```
