@@ -43,9 +43,31 @@
         <span class="pi">-</span> <span class="s">string search</span>
         <span class="pi">-</span> <span class="kt">!!js/regexp</span> <span class="s">/regex search/</span>
         <span class="pi">-</span> <span class="s">more</span>
+</code></pre></div></div> <p>You can achieve a logical “and” by specifying a dictionary of values</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="na">match</span><span class="pi">:</span>
+      <span class="na">this_field</span><span class="pi">:</span> <span class="s2">"</span><span class="s">some</span><span class="nv"> </span><span class="s">string"</span>
+      <span class="na">other_field</span><span class="pi">:</span> <span class="s2">"</span><span class="s">also</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">string"</span>
+</code></pre></div></div> <p>You can combine the two by specifying a dictionary with an array of values:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="na">match</span><span class="pi">:</span>
+      <span class="na">this_field</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">this string</span>
+        <span class="pi">-</span> <span class="s">or this string</span>
+      <span class="na">other_field</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">also one</span>
+        <span class="pi">-</span> <span class="s">of these strings</span>
 </code></pre></div></div> <h2 id="equals"> <a href="#equals" class="anchor-heading" aria-labelledby="equals"><svg viewbox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <a class="anchor" href="#equals" aria-hidden="true"><span class="octicon octicon-link"></span></a><code class="language-plaintext highlighter-rouge">equals</code> </h2> <p>Exact match of the field <code class="language-plaintext highlighter-rouge">some_field</code> against the value <code class="language-plaintext highlighter-rouge">7</code>:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="na">equals</span><span class="pi">:</span>
       <span class="na">some_field</span><span class="pi">:</span> <span class="m">7</span>
-</code></pre></div></div> <p>You can achieve a logical “or” by specifying an array of values:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="na">match</span><span class="pi">:</span>
+</code></pre></div></div> <p>You can achieve a logical “or” by specifying an array of values:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="na">equals</span><span class="pi">:</span>
+      <span class="na">other_field</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">value</span>
+        <span class="pi">-</span> <span class="s">temp</span>
+        <span class="pi">-</span> <span class="s">over</span>
+</code></pre></div></div> <p>You can achieve a logical “and” by specifying a dictionary of values:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="na">equals</span><span class="pi">:</span>
+      <span class="na">some_field</span><span class="pi">:</span> <span class="m">7</span>
+      <span class="na">other_field</span><span class="pi">:</span> <span class="s">value</span>
+</code></pre></div></div> <p>You can combine the two by specifying a dictionary with an array of values:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="na">equals</span><span class="pi">:</span>
+      <span class="na">some_field</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="m">7</span>
+        <span class="pi">-</span> <span class="m">8</span>
+        <span class="pi">-</span> <span class="m">9</span>
       <span class="na">other_field</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">value</span>
         <span class="pi">-</span> <span class="s">temp</span>
