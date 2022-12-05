@@ -50,6 +50,25 @@ description: Panther Rules - selections
         - more
   ```
 
+  You can achieve a logical "and" by specifying a dictionary of values
+
+  ```yaml
+    match:
+      this_field: "some string"
+      other_field: "also this string"
+  ```
+
+  You can combine the two by specifying a dictionary with an array of values:
+
+  ```yaml
+    match:
+      this_field:
+        - this string
+        - or this string
+      other_field:
+        - also one
+        - of these strings
+  ```
 
 ## `equals`
 
@@ -63,7 +82,29 @@ description: Panther Rules - selections
   You can achieve a logical "or" by specifying an array of values:
 
   ```yaml
-    match:
+    equals:
+      other_field:
+        - value
+        - temp
+        - over
+  ```
+
+  You can achieve a logical "and" by specifying a dictionary of values:
+
+  ```yaml
+    equals:
+      some_field: 7
+      other_field: value
+  ```
+
+  You can combine the two by specifying a dictionary with an array of values:
+
+  ```yaml
+    equals:
+      some_field:
+        - 7
+        - 8
+        - 9
       other_field:
         - value
         - temp
