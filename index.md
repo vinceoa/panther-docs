@@ -19,7 +19,7 @@ Use the Panther [Console](./panther/console/index.md#overview) and [Rules](./pan
 _Watch your Events like a Panther!_
 
 # IT Support - First Line Operations
-defintion: **Event**
+definition: **Event**
   /ɪˈvɛnt/
   _noun_
   `a thing that happens or takes place, especially one of importance.`
