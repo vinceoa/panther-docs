@@ -208,7 +208,7 @@ description: Panther Rules - selections
 
 ## `discard`
 
-Sets the severity of the alert to -1, so that it will be discarded:
+Sets the severity of the event to -1 and stops further rule processing. The event will be discarded:
 
   ```yaml
     - name: other_replace
